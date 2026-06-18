@@ -51,7 +51,7 @@ python sweep.py --rhos "0.70,0.75,0.80,0.85,0.90,0.95" \
     --epochs 4000 --d 64 --batch 32
 ```
 
-### Step 2: Generate the publication figure
+### Step 2: Generate the Summary figure
 
 ```bash
 python make_viz.py
@@ -178,18 +178,3 @@ This small per-position gap accumulates across the softmax distribution, shiftin
 3. **Random item vectors.** Items are isotropic Gaussian vectors with no semantic structure. Adding realistic temporal autocorrelation or shot-boundary structure could change the quantitative results.
 
 ---
-
-## Citation
-
-```bibtex
-@misc{tcm_temporal_position,
-  title   = {TCM Temporal Position Model},
-  author  = {Lu, Q.},
-  year    = {2026},
-  note    = {GitHub repository},
-}
-```
-
-## License
-
-MIT
