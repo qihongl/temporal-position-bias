@@ -1,6 +1,8 @@
-logs/
+logs*/
 legacy/
-
+paper/
+.workbuddy/
+figures_notmpl/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

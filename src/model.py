@@ -35,18 +35,45 @@ class AttentionDecoder(nn.Module):
     """
     Attention-based position decoder.
 
-    Compares query context c_q to all stored contexts c_1..c_L,
-    outputs softmax-weighted average of position templates.
+    Compares query context c_q to all stored contexts c_1..c_L.
+    Two readout modes controlled by use_position_template:
+
+    - True (default): pos = Σ_i α_i · (i/L)
+      Hardcoded linear position template [0, 1]. The decoder only learns
+      where to attend; position values are fixed.
+
+    - False: pos = Σ_i α_i · f(i / (L−1))
+      Learned position function f: [0, 1] → ℝ. A small MLP replaces the
+      hardcoded (i/L) template with a learnable nonlinear mapping. The
+      attention mechanism is identical — only the position VALUES change.
+      No output activation; MSE loss constrains f to roughly [0, 1].
 
     Forward asymmetry emerges because rho < 1 makes c_{q+k} more
     similar to c_q than c_{q-k} for equal |k| > 0.
     """
 
-    def __init__(self, d_context=64):
+    def __init__(self, d_context=64, use_position_template=True,
+                 pos_fn_hidden=32):
         super().__init__()
+        self.use_position_template = use_position_template
         self.query = nn.Linear(d_context, d_context, bias=False)
         self.key = nn.Linear(d_context, d_context, bias=False)
         self.raw_temp = nn.Parameter(torch.tensor(0.5413))  # softplus(0.5413) ≈ 1.0
+
+        if not use_position_template:
+            # Learned position function f: t ∈ [0, 1] → position value
+            # Small MLP with sigmoid output to stay in [0, 1]
+            # Initialised with small weights → roughly f(t) ≈ 0.5
+            # then converges to a potentially nonlinear position scale
+            self.pos_fn = nn.Sequential(
+                nn.Linear(1, pos_fn_hidden),
+                nn.ReLU(),
+                nn.Linear(pos_fn_hidden, pos_fn_hidden),
+                nn.ReLU(),
+                nn.Linear(pos_fn_hidden, 1),
+            )
+            # No sigmoid — let f(t) learn its own range.
+            # MSE loss naturally constrains output to roughly [0, 1]
 
     @property
     def temperature(self):
@@ -59,8 +86,16 @@ class AttentionDecoder(nn.Module):
         k = self.key(c_all)
         scores = torch.bmm(k, q.unsqueeze(-1)).squeeze(-1)
         weights = F.softmax(scores / self.temperature, dim=-1)
-        pos_template = torch.linspace(0, 1, L, device=c_all.device)
-        pos = (weights * pos_template.unsqueeze(0)).sum(dim=-1)
+
+        if self.use_position_template:
+            pos_template = torch.linspace(0, 1, L, device=c_all.device)
+            pos = (weights * pos_template.unsqueeze(0)).sum(dim=-1)
+        else:
+            # Learned position function f(t) where t ∈ [0, 1]
+            t = torch.linspace(0, 1, L, device=c_all.device).unsqueeze(-1)  # (L, 1)
+            pos_vals = self.pos_fn(t).squeeze(-1)  # (L,)
+            pos = (weights * pos_vals.unsqueeze(0)).sum(dim=-1)
+
         if return_weights:
             return pos, weights
         return pos

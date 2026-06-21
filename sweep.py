@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.config import (
     D_ITEM, D_CONTEXT, SWEEP_RHOS, SWEEP_SIGMAS, SWEEP_EPOCHS, SWEEP_BATCH,
-    SEQ_TEST, TEST_POSITIONS, HUMAN_ERRORS,
+    SEQ_TEST, TEST_POSITIONS, HUMAN_ERRORS, USE_POSITION_TEMPLATE,
 )
 from src.train import train_model, evaluate_model, get_attention_weights
 from src.analysis import compute_summary_stats, compute_human_loss
@@ -45,6 +45,11 @@ def main():
     parser.add_argument('--base', type=str, default='.')
     parser.add_argument('--no-figures', action='store_true',
                         help='Skip figure generation (faster)')
+    parser.add_argument('--no-template', action='store_true',
+                        help='Remove (i/L) position template; decoder learns'
+                             ' position from retrieved context mixture via MLP')
+    parser.add_argument('--log-name', type=str, default=None,
+                        help='Custom log directory name (e.g., "replication")')
     args = parser.parse_args()
 
     rhos = [float(r) for r in args.rhos.split(',')]
@@ -69,8 +74,16 @@ def main():
     means_grid = np.zeros((len(rhos), len(sigmas), 4))
 
     base_dir = os.path.abspath(args.base)
-    logs_root = os.path.join(base_dir, 'logs')
-    figs_root = os.path.join(base_dir, 'figures')
+    use_template = not args.no_template
+    if args.log_name:
+        suffix = f'_{args.log_name}'
+    else:
+        suffix = '' if use_template else '_notmpl'
+    logs_root = os.path.join(base_dir, f'logs{suffix}')
+    figs_root = os.path.join(base_dir, f'figures{suffix}')
+
+    print(f"  Decoder: {'linear template' if use_template else 'learned pos_fn (no template)'}")
+    print("=" * 60)
 
     for i, rho in enumerate(rhos):
         for j, sm in enumerate(sigmas):
@@ -86,9 +99,10 @@ def main():
                     continue
 
                 # Train
-                encoder, decoder = train_model(
+                encoder, decoder, train_mse = train_model(
                     rho, sm, epochs=args.epochs, batch_size=args.batch,
-                    d_item=D_ITEM, d_context=args.d, seed=seed
+                    d_item=D_ITEM, d_context=args.d, seed=seed,
+                    use_position_template=use_template,
                 )
 
                 # Evaluate
@@ -96,6 +110,7 @@ def main():
                 attn = get_attention_weights(encoder, decoder, sm, d_item=D_ITEM)
                 means, _, asymmetry = compute_summary_stats(errors)
                 loss_val = compute_human_loss(means)
+                eval_mae = float(np.mean([np.mean(np.abs(errors[p])) for p in TEST_POSITIONS]))
 
                 # Store best seed's loss for the grid (first seed, or best)
                 if seed == seeds[0]:
@@ -103,12 +118,14 @@ def main():
                     means_grid[i, j] = means
 
                 print(f"  → means: [{means[0]:.1f}, {means[1]:.1f}, {means[2]:.1f}, {means[3]:.1f}]")
-                print(f"  → asymmetry: {asymmetry:+.1f}, loss: {loss_val:.1f}")
+                print(f"  → asymmetry: {asymmetry:+.1f}, loss: {loss_val:.1f}, MAE: {eval_mae:.2f}%, train MSE: {train_mse:.6f}")
 
                 # Save logs
                 save_results(ldir, errors, attn, rho, sm,
                              metadata={'epochs': args.epochs, 'loss': loss_val,
-                                       'asymmetry': asymmetry, 'd': args.d, 'seed': seed})
+                                       'asymmetry': asymmetry, 'd': args.d, 'seed': seed,
+                                       'train_mse': train_mse, 'eval_mae': eval_mae,
+                                       'use_position_template': use_template})
                 print(f"  → logs: {ldir}")
 
                 # Save figures (only for first seed, avoid bloat)

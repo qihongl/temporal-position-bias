@@ -32,5 +32,8 @@ SWEEP_SIGMAS = [0.05, 0.10, 0.15, 0.20, 0.25]
 SWEEP_EPOCHS = 2000        # fewer epochs for sweeps
 SWEEP_BATCH = 32
 
+# ---- Decoder configuration ----
+USE_POSITION_TEMPLATE = True   # False → learned MLP decoder (no (i/L) template)
+
 # ---- Human benchmark (Hu et al.) ----
 HUMAN_ERRORS = [13.41, 7.57, -1.91, -7.36]  # at 20%, 40%, 60%, 80%

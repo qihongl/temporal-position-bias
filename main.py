@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.config import (
     D_ITEM, D_CONTEXT, EPOCHS, SEQ_TEST,
-    TEST_POSITIONS, HUMAN_ERRORS,
+    TEST_POSITIONS, HUMAN_ERRORS, USE_POSITION_TEMPLATE,
 )
 from src.train import train_model, evaluate_model, get_attention_weights
 from src.analysis import compute_summary_stats, compute_human_loss
@@ -46,6 +46,9 @@ def main():
     parser.add_argument('--sweep-plot', action='store_true',
                         help='Generate sweep summary from all saved runs')
     parser.add_argument('--base', type=str, default='.', help='Base directory')
+    parser.add_argument('--no-template', action='store_true',
+                        help='Remove (i/L) position template; decoder learns'
+                             ' position from retrieved context mixture via MLP')
     args = parser.parse_args()
 
     # ---- Sweep summary mode ----
@@ -101,10 +104,14 @@ def main():
         return
 
     # ---- Train + Eval mode ----
+    use_template = not args.no_template
+    suffix = '' if use_template else '_notmpl'
     print(f"Training: ρ={args.rho}, σ_m={args.sigma}, d={args.d}, seed={args.seed}")
+    print(f"  Decoder: {'linear template' if use_template else 'learned pos_fn (no template)'}")
 
-    encoder, decoder = train_model(args.rho, args.sigma, epochs=args.epochs,
-                                   d_item=D_ITEM, d_context=args.d, seed=args.seed)
+    encoder, decoder, train_mse = train_model(args.rho, args.sigma, epochs=args.epochs,
+                                   d_item=D_ITEM, d_context=args.d, seed=args.seed,
+                                   use_position_template=use_template)
 
     errors = evaluate_model(encoder, decoder, args.sigma, d_item=D_ITEM)
     attn = get_attention_weights(encoder, decoder, args.sigma, d_item=D_ITEM)
@@ -112,16 +119,17 @@ def main():
 
     loss = compute_human_loss(means)
     print(f"  Means: [{means[0]:.1f}, {means[1]:.1f}, {means[2]:.1f}, {means[3]:.1f}]")
-    print(f"  Asymmetry: {asymmetry:+.1f}, Loss: {loss:.1f}")
+    print(f"  Asymmetry: {asymmetry:+.1f}, Loss: {loss:.1f}, Train MSE: {train_mse:.6f}")
 
     # Save
-    ldir = log_dir(args.rho, args.sigma, args.d, args.seed, base=os.path.join(args.base, 'logs'))
+    ldir = log_dir(args.rho, args.sigma, args.d, args.seed, base=os.path.join(args.base, f'logs{suffix}'))
     save_results(ldir, errors, attn, args.rho, args.sigma,
-                 metadata={'epochs': args.epochs, 'loss': loss, 'asymmetry': asymmetry})
+                 metadata={'epochs': args.epochs, 'loss': loss, 'asymmetry': asymmetry,
+                           'train_mse': train_mse, 'use_position_template': use_template})
     print(f"  Results saved to {ldir}")
 
     # Plot
-    fdir = figure_dir(args.rho, args.sigma, args.d, args.seed, base=os.path.join(args.base, 'figures'))
+    fdir = figure_dir(args.rho, args.sigma, args.d, args.seed, base=os.path.join(args.base, f'figures{suffix}'))
     plot_error_curve(errors, args.rho, args.sigma,
                      save_path=os.path.join(fdir, 'error_curve.png'))
     plot_error_distributions(errors, args.rho, args.sigma,

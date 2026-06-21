@@ -19,16 +19,22 @@ def make_items(B, L, d=D_ITEM, device='cpu'):
 
 
 def train_model(rho, sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
-                d_item=D_ITEM, d_context=D_CONTEXT, seed=42):
-    """Train a single TCM model with attention decoder. Returns (encoder, decoder)."""
+                d_item=D_ITEM, d_context=D_CONTEXT, seed=42,
+                use_position_template=True):
+    """Train a single TCM model with attention decoder.
+
+    Returns:
+        (encoder, decoder, train_loss): final epoch MSE (scalar).
+    """
     torch.manual_seed(seed)
     np.random.seed(seed)
     encoder = TCMEncoder(rho, d_item, d_context)
-    decoder = AttentionDecoder(d_context)
+    decoder = AttentionDecoder(d_context, use_position_template=use_position_template)
     optimizer = torch.optim.Adam(
         list(encoder.parameters()) + list(decoder.parameters()), lr=LR)
     criterion = torch.nn.MSELoss()
 
+    final_loss = None
     for epoch in range(epochs):
         L = np.random.randint(SEQ_MIN, SEQ_MAX + 1)
         items = make_items(batch_size, L, d_item)
@@ -42,8 +48,9 @@ def train_model(rho, sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
         torch.nn.utils.clip_grad_norm_(
             list(encoder.parameters()) + list(decoder.parameters()), 1.0)
         optimizer.step()
+        final_loss = loss.item()
 
-    return encoder, decoder
+    return encoder, decoder, final_loss
 
 
 def evaluate_model(encoder, decoder, sigma_m,
