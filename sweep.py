@@ -50,6 +50,8 @@ def main():
                              ' position from retrieved context mixture via MLP')
     parser.add_argument('--log-name', type=str, default=None,
                         help='Custom log directory name (e.g., "replication")')
+    parser.add_argument('--no-proj', action='store_true',
+                        help='Remove learned projection P; feed raw items to TCM')
     args = parser.parse_args()
 
     rhos = [float(r) for r in args.rhos.split(',')]
@@ -82,6 +84,7 @@ def main():
     logs_root = os.path.join(base_dir, f'logs{suffix}')
     figs_root = os.path.join(base_dir, f'figures{suffix}')
 
+    print(f"  Encoder: {'TCM with projection P' if not args.no_proj else 'TCM without projection P (raw items)'}")
     print(f"  Decoder: {'linear template' if use_template else 'learned pos_fn (no template)'}")
     print("=" * 60)
 
@@ -103,6 +106,7 @@ def main():
                     rho, sm, epochs=args.epochs, batch_size=args.batch,
                     d_item=D_ITEM, d_context=args.d, seed=seed,
                     use_position_template=use_template,
+                    use_proj=not args.no_proj,
                 )
 
                 # Evaluate
@@ -125,7 +129,8 @@ def main():
                              metadata={'epochs': args.epochs, 'loss': loss_val,
                                        'asymmetry': asymmetry, 'd': args.d, 'seed': seed,
                                        'train_mse': train_mse, 'eval_mae': eval_mae,
-                                       'use_position_template': use_template})
+                                       'use_position_template': use_template,
+                                       'use_proj': not args.no_proj})
                 print(f"  → logs: {ldir}")
 
                 # Save figures (only for first seed, avoid bloat)

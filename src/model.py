@@ -11,24 +11,54 @@ import torch.nn.functional as F
 
 
 class TCMEncoder(nn.Module):
-    """Autoregressive context encoder."""
+    """Autoregressive context encoder.
 
-    def __init__(self, rho, d_item=64, d_context=64):
+    use_proj=True (default): f_t = normalize(P · x_t)  — learned projection
+    use_proj=False:         f_t = normalize(x_t)       — raw items, 0 learned params
+    """
+
+    def __init__(self, rho, d_item=64, d_context=64, use_proj=True):
         super().__init__()
         self.rho = rho
         self.d_context = d_context
-        self.proj = nn.Linear(d_item, d_context, bias=False)
-        nn.init.orthogonal_(self.proj.weight)
+        self.use_proj = use_proj
+        if use_proj:
+            self.proj = nn.Linear(d_item, d_context, bias=False)
+            nn.init.orthogonal_(self.proj.weight)
 
     def forward(self, items):
         B, L, _ = items.shape
-        f = F.normalize(self.proj(items), dim=-1)
+        if self.use_proj:
+            f = F.normalize(self.proj(items), dim=-1)
+        else:
+            f = F.normalize(items, dim=-1)
         c = torch.zeros(B, self.d_context, device=items.device)
         contexts = []
         for t in range(L):
             c = self.rho * c + (1 - self.rho) * f[:, t]
             contexts.append(c)
         return f, torch.stack(contexts, dim=1)
+
+
+class SimpleRNNEncoder(nn.Module):
+    """Learned forward recurrent encoder used as a TCM control model.
+
+    It exposes the same ``(features, contexts)`` interface as ``TCMEncoder``
+    so the attention decoder and evaluation code are held fixed.
+    """
+
+    def __init__(self, d_item=64, d_context=64):
+        super().__init__()
+        self.rnn = nn.RNN(
+            input_size=d_item,
+            hidden_size=d_context,
+            nonlinearity="tanh",
+            batch_first=True,
+        )
+
+    def forward(self, items):
+        contexts, _ = self.rnn(items)
+        return items, contexts
 
 
 class AttentionDecoder(nn.Module):

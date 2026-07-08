@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The TCM Model of Temporal Position Bias</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #222222;
+    --muted: #555555;
+    --border: #e0e0e0;
+    --accent: #1F78B4;
+    --accent2: #E31A1C;
+    --highlight: #FFF3CD;
+    --code-bg: #f5f5f5;
+    --box-bg: #f8f9fa;
+    --learned-bg: #EEEDFE;
+    --learned-border: #534AB7;
+    --fixed-bg: #FAC775;
+    --fixed-border: #BA7517;
+    --data-bg: #E6F1FB;
+    --data-border: #378ADD;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  h1 { font-size: 28px; font-weight: 600; margin-bottom: 8px; color: #111; }
+  h2 { font-size: 22px; font-weight: 600; margin: 48px 0 16px; padding-bottom: 6px; border-bottom: 2px solid var(--border); color: #111; }
+  h3 { font-size: 17px; font-weight: 600; margin: 32px 0 12px; color: #333; }
+  p { margin-bottom: 14px; }
+  .subtitle { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+  .abstract {
+    background: var(--box-bg); border-left: 4px solid var(--accent);
+    padding: 18px 22px; margin: 24px 0; border-radius: 4px;
+    font-size: 14px; line-height: 1.7;
+  }
+  .abstract strong { color: #111; }
+  figure { margin: 28px 0; text-align: center; }
+  figure img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13.5px; }
+  th, td { padding: 9px 14px; border: 1px solid var(--border); text-align: center; }
+  th { background: #f0f0f0; font-weight: 600; }
+  td:first-child { text-align: left; }
+  .code { background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 13px; }
+  .note {
+    background: var(--highlight); border-left: 4px solid #ffc107;
+    padding: 14px 18px; margin: 18px 0; border-radius: 4px; font-size: 14px;
+  }
+  .equation { margin: 16px 0; text-align: center; font-size: 16px; }
+  .equation-box {
+    background: var(--box-bg); border: 1px solid var(--border);
+    padding: 20px 24px; margin: 18px 0; border-radius: 8px;
+  }
+  .equation-box .eq-label {
+    font-size: 13px; font-weight: 600; color: var(--muted);
+    margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  ol, ul { margin: 10px 0 10px 28px; }
+  li { margin-bottom: 6px; }
+  .step { margin: 20px 0; padding: 18px 22px; background: var(--box-bg); border-radius: 8px; border-left: 4px solid var(--accent); }
+  .step-header { font-weight: 600; font-size: 15px; margin-bottom: 8px; color: #111; }
+  .step-header .num {
+    display: inline-block; background: var(--accent); color: white;
+    width: 24px; height: 24px; border-radius: 12px; text-align: center;
+    line-height: 24px; font-size: 13px; margin-right: 8px;
+  }
+  .highlight-num { font-size: 22px; font-weight: 700; color: var(--accent); }
+  .glossary { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin: 14px 0; font-size: 13.5px; }
+  .glossary-item { padding: 6px 10px; border-radius: 4px; }
+  .glossary-item.learned { background: var(--learned-bg); }
+  .glossary-item.fixed   { background: var(--fixed-bg); }
+  .glossary-item.data    { background: var(--data-bg); }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; font-weight: 600; }
+  .tag-learned { background: var(--learned-bg); color: var(--learned-border); border: 1px solid var(--learned-border); }
+  .tag-fixed   { background: var(--fixed-bg); color: var(--fixed-border); border: 1px solid var(--fixed-border); }
+  .tag-data    { background: var(--data-bg); color: var(--data-border); border: 1px solid var(--data-border); }
+  .mechanism { text-align: center; margin: 24px 0; }
+  .mechanism .row { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; margin: 8px 0; }
+  .mechanism .box { padding: 12px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; min-width: 130px; }
+  .mechanism .arrow { font-size: 20px; }
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 12px 0; font-size: 12px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<h1>The TCM Model of Temporal Position Bias</h1>
+<p class="subtitle">How a simple memory model explains why humans systematically misremember when events happened</p>
+
+<div class="abstract">
+<strong>Abstract.</strong> When asked to locate an event within a timeline, people <em>overestimate</em> early positions and <em>underestimate</em> late ones — a bias that is <strong>asymmetric</strong> (early moments distorted more than late). We show that the <strong>Temporal Context Model (TCM)</strong> — a recurrent network with only 12,289 learned parameters — naturally reproduces this human-like pattern from the geometry of its forward-only context dynamics, without any hand-tuned asymmetry parameter. The bias emerges from a simple geometric fact: at equal distance from a query, forward-looking contexts share more constituent items with the query than backward-looking ones. Learned key-query projections amplify this signal ~10&times;, and a sharp softmax converts it into the observed behavioral bias. We validate through systematic ablation, encoder/decoder relaxation, and training optimization.
+</div>
+
+<!-- ============================================================ -->
+<h2>1. Why Do We Care?</h2>
+
+<p>When you watch a movie and someone asks "where in the film did that scene happen?", your answer will systematically deviate from the truth. If it happened early, you'll say it was <em>later</em> than it was. If it happened late, you'll say it was <em>earlier</em>. Crucially, the early-position error is <strong>larger</strong> than the late-position error — the bias is asymmetric.</p>
+
+<p>This pattern was documented by Hu et al. in human experiments: at four positions (20%, 40%, 60%, 80% through the timeline), people showed errors of roughly <strong>[+13, +8, −2, −7]</strong> percent. Classical Bayesian accounts predict a <em>symmetric</em> regression to the mean. They can't explain why early positions are biased more than late ones.</p>
+
+<p><strong>Our model shows that three simple ingredients — forward-only recurrence, exponential decay, and content-addressable retrieval — are sufficient to produce this asymmetry. No asymmetric parameter is needed.</strong></p>
+
+<!-- ============================================================ -->
+<h2>2. Notation Glossary — Every Variable Defined</h2>
+
+<p>The model uses three kinds of values. <strong>Learn the colors</strong> — they'll help you track what's going on in every equation.</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch" style="background:var(--learned-bg); border:1px solid var(--learned-border);"></div> <strong>Learned</strong> — trained by gradient descent</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:var(--fixed-bg); border:1px solid var(--fixed-border);"></div> <strong>Fixed</strong> — hand-chosen hyperparameter</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:var(--data-bg); border:1px solid var(--data-border);"></div> <strong>Data</strong> — generated or computed on the fly</div>
+</div>
+
+<h3>Individual Items and Contexts</h3>
+
+<div class="glossary">
+  <div class="glossary-item data"><code>x_t</code><span class="tag tag-data">data</span> — raw item at position <em>t</em>. A random 64-dimensional Gaussian vector: <em>x<sub>t</sub></em> ~ &Nu;(0, I). Acts as a placeholder for "whatever the brain perceives at this moment."</div>
+  <div class="glossary-item data"><code>f_t</code><span class="tag tag-data">data</span> — normalized item. The projected version of <em>x<sub>t</sub></em>, forced to unit length: <em>f<sub>t</sub></em> = <em>P</em>·<em>x<sub>t</sub></em> / ||<em>P</em>·<em>x<sub>t</sub></em>||. Lives on the 63-dimensional sphere.</div>
+  <div class="glossary-item data"><code>c_t</code><span class="tag tag-data">data</span> — context vector at position <em>t</em>. A leaky moving average of all items up to <em>t</em>. This is the model's "memory state."</div>
+  <div class="glossary-item data"><code>c_q</code><span class="tag tag-data">data</span> — query context. The context at the queried position, perturbed by noise to simulate imperfect recall.</div>
+  <div class="glossary-item data"><code>L</code><span class="tag tag-data">data</span> — sequence length. Number of items in the timeline (varies 60–180 during training, fixed at 100 for testing).</div>
+  <div class="glossary-item data"><code>q</code><span class="tag tag-data">data</span> — true relative position of the query. A fraction in [0, 1], e.g. 0.20 means "20% through the sequence."</div>
+  <div class="glossary-item data"><code>q&#770;</code><span class="tag tag-data">data</span> — estimated relative position. The model's output. Compared to <em>q</em> via mean squared error.</div>
+</div>
+
+<h3>Learned Parameters (Trained by Gradient Descent)</h3>
+
+<div class="glossary">
+  <div class="glossary-item learned"><code>P</code><span class="tag tag-learned">learned</span> — projection matrix, 64&times;64 = 4,096 params. Maps raw random items into a useful coordinate system for the TCM recurrence. Starts as a rotation (orthogonal), deforms during training.</div>
+  <div class="glossary-item learned"><code>K</code><span class="tag tag-learned">learned</span> — key projection, 64&times;64 = 4,096 params. Projects each stored context <em>c<sub>i</sub></em> into attention-score space. "What does this memory look like?"</div>
+  <div class="glossary-item learned"><code>Q</code><span class="tag tag-learned">learned</span> — query projection, 64&times;64 = 4,096 params. Projects the query context <em>c<sub>q</sub></em> into the same attention-score space. "What am I looking for?"</div>
+  <div class="glossary-item learned"><code>T</code><span class="tag tag-learned">learned</span> — temperature, 1 scalar param. Controls softmax sharpness. Converges to ~0.34, making attention focus on nearby positions.</div>
+</div>
+
+<h3>Fixed Hyperparameters (Set by Hand)</h3>
+
+<div class="glossary">
+  <div class="glossary-item fixed"><code>ρ (rho)</code><span class="tag tag-fixed">fixed</span> — context persistence, a scalar in (0, 1). Controls how much old context is retained. Best fit at ρ = 0.95, meaning ~5% of the context is replaced by each new item.</div>
+  <div class="glossary-item fixed"><code>σ<sub>m</sub> (sigma)</code><span class="tag tag-fixed">fixed</span> — retrieval noise standard deviation. Gaussian noise added to the query context before comparison. Best fit at σ<sub>m</sub> = 0.05.</div>
+  <div class="glossary-item fixed"><code>d</code><span class="tag tag-fixed">fixed</span> — dimensionality. All vectors live in ℝ<sup>64</sup>.</div>
+</div>
+
+<h3>Attention Mechanics (Computed)</h3>
+
+<div class="glossary">
+  <div class="glossary-item data"><code>score<sub>i</sub></code><span class="tag tag-data">data</span> — attention score for stored context <em>i</em>. How well does memory <em>i</em> match the query?</div>
+  <div class="glossary-item data"><code>α<sub>i</sub></code><span class="tag tag-data">data</span> — attention weight for position <em>i</em>. A probability (sums to 1). How much the model "looks at" memory <em>i</em>.</div>
+  <div class="glossary-item data"><code>i/(L−1)</code><span class="tag tag-data">data</span> — position template. Hardcoded fraction for each position — also called the <em>readout template</em>.</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>3. How the Model Works — Step by Step</h2>
+
+<h3>Phase 1: Encoding — Building Memory</h3>
+
+<p>The model processes a stream of items one by one. At each step, it blends the new item into a running average called the <strong>context</strong>.</p>
+
+<div class="step">
+  <div class="step-header"><span class="num">1</span> Project &amp; normalize the item</div>
+  <div class="equation-box">
+    <div class="eq-label">Item Encoding</div>
+    \[
+    \underbrace{f_t}_{\substack{\text{normalized} \\ \text{item vector}}}
+    \;=\; \frac{\overbrace{P}^{\substack{\text{learned 64×64} \\ \text{projection}}}
+           \;\cdot\; \underbrace{x_t}_{\substack{\text{raw random} \\ \text{item, } \mathcal{N}(0,I)}}}
+          {\big\|P \cdot x_t\big\|_2}
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    <em>P</em> starts as a rotation and learns which directions matter. <em>f<sub>t</sub></em> is a unit vector on the 63-sphere — all items have equal magnitude, differing only in direction.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header"><span class="num">2</span> Accumulate via the TCM recurrence</div>
+  <div class="equation-box">
+    <div class="eq-label">Context Update — the heart of the model</div>
+    \[
+    \underbrace{c_t}_{\substack{\text{context at} \\ \text{position } t}}
+    \;=\;
+    \underbrace{\rho}_{\substack{\text{fixed} \\ \text{persistence} \\ \rho=0.95}}
+    \cdot \underbrace{c_{t-1}}_{\substack{\text{previous} \\ \text{context}}}
+    \;+\;
+    \underbrace{(1-\rho)}_{\substack{\text{mixing} \\ \text{rate = 0.05}}}
+    \cdot \underbrace{f_t}_{\substack{\text{current} \\ \text{item}}}
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    Each new item replaces ~5% of the memory. Recent items dominate; older items decay exponentially.
+    The "effective memory span" is about 20 items before old context is mostly forgotten.
+    <strong>This is a parameter-free recurrence — no weights are learned here.</strong></p>
+  </div>
+</div>
+
+<p>After processing all L items, we have the <strong>context stack</strong> C = [c<sub>1</sub>, c<sub>2</sub>, ..., c<sub>L</sub>] — the model's full memory trace.</p>
+
+<div class="note">
+<strong>Intuition:</strong> Think of c<sub>t</sub> as the "scent trail" of everything that's happened so far. At position 20, the context smells strongly of items 18–20, moderately of items 10–17, and faintly of items 1–9. Two nearby positions have very similar smells; two distant ones have very different smells. <strong>This similarity structure is how the model later infers position.</strong>
+</div>
+
+<h3>Phase 2: Retrieval — Finding Position from Memory</h3>
+
+<p>Now the model is asked: "where in the timeline was this moment?" It must compare the query context against all stored contexts using learned attention.</p>
+
+<div class="step">
+  <div class="step-header"><span class="num">3</span> Extract and perturb the query context</div>
+  <div class="equation-box">
+    <div class="eq-label">Query Extraction</div>
+    \[
+    \underbrace{c_q}_{\substack{\text{query} \\ \text{context}}}
+    \;=\; \text{normalize}\Big(
+    \underbrace{c_{\lfloor q \cdot L \rfloor}}_{\substack{\text{context at} \\ \text{true position}}}
+    \;+\; \underbrace{\varepsilon}_{\substack{\mathcal{N}(0,\sigma_m^2 I) \\ \text{retrieval noise} \\ \sigma_m = 0.05}}
+    \Big)
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    Noise simulates an imperfect memory trace. The noisy context is then normalized back to unit length.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header"><span class="num">4</span> Compare the query against every stored context</div>
+  <div class="equation-box">
+    <div class="eq-label">Attention Scoring</div>
+    \[
+    \underbrace{\text{score}_i}_{\substack{\text{attention score} \\ \text{for position } i}}
+    \;=\; \frac{
+    \overbrace{K}^{\substack{\text{learned} \\ \text{key matrix} \\ \text{64×64}}}
+    (\underbrace{c_i}_{\substack{\text{stored} \\ \text{context}}})
+    \;\cdot\;
+    \overbrace{Q}^{\substack{\text{learned} \\ \text{query matrix} \\ \text{64×64}}}
+    (\underbrace{c_q}_{\substack{\text{query} \\ \text{context}}})
+    }
+    {\underbrace{T}_{\substack{\text{learned} \\ \text{temperature} \\ T \approx 0.34}}}
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    <strong>K</strong> and <strong>Q</strong> project contexts into a learned space where position differences are maximally discriminable.
+    Dividing by the small <strong>T</strong> (&asymp;0.34) amplifies score differences, making softmax sharper.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header"><span class="num">5</span> Convert scores to a probability distribution</div>
+  <div class="equation-box">
+    <div class="eq-label">Softmax Normalization</div>
+    \[
+    \underbrace{\alpha_i}_{\substack{\text{attention weight} \\ \text{(probability)}}}
+    \;=\; \frac{\exp(\text{score}_i)}
+    {\displaystyle\sum_{j=1}^{L} \exp(\text{score}_j)}
+    \qquad
+    \sum_{i=1}^{L} \alpha_i = 1
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    These weights tell us which positions the model "attends to." Peaked weights = confident estimate; flat weights = uncertain.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header"><span class="num">6</span> Read out the position estimate</div>
+  <div class="equation-box">
+    <div class="eq-label">Position Readout</div>
+    \[
+    \underbrace{\hat{q}}_{\substack{\text{estimated} \\ \text{position}}}
+    \;=\;
+    \sum_{i=1}^{L}
+    \underbrace{\alpha_i}_{\substack{\text{attention} \\ \text{weight}}}
+    \;\cdot\;
+    \underbrace{\frac{i}{L-1}}_{\substack{\text{hardcoded} \\ \text{position template} \\ \text{(not learned)}}}
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    The fractions i/(L−1) map each position index to [0, 1]. The estimate is the attention-weighted average.
+    <strong>The template is hardcoded — the model only learns <em>where</em> to attend, not <em>what value</em> each position has.</strong></p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header"><span class="num">7</span> Compute the loss</div>
+  <div class="equation-box">
+    <div class="eq-label">Training Objective</div>
+    \[
+    \mathcal{L} = (\hat{q} - q)^2
+    \]
+    <p style="font-size:12px; color:var(--muted); margin-top:4px;">
+    Simple mean squared error. The model gets fresh random items every epoch, so it cannot memorize specific items —
+    it must learn a <em>general</em> temporal mechanism.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="figures/tcm_viz_best_model.png" alt="Best model results">
+  <figcaption>Best model results (ρ=0.95, σ<sub>m</sub>=0.05, LR=5×10⁻², 4K epochs, 5 seeds averaged). <strong>A:</strong> Error curve (red) compared to human (black). <strong>B:</strong> Histogram + KDE of signed errors per position — early positions (blue) shifted right, late positions (purple) shifted left. <strong>C:</strong> Violin plots. <strong>D:</strong> Forward-skewed attention weights at four query positions. <strong>E:</strong> Context similarity matrix — note the smooth decay from the diagonal. <strong>F:</strong> Forward vs. backward cosine similarity.</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2>4. Where the Bias Comes From — The Mechanism</h2>
+
+<h3>4.1 The Honest Answer — It's Not Obvious</h3>
+
+<p>A natural guess is that the bias comes from a simple geometric asymmetry: at equal lag, forward contexts have higher cosine similarity to the query than backward contexts — because they share more items. <strong>This guess turns out to be wrong.</strong></p>
+
+<p>Here is the actual data, averaged over 50 independent random sequences at q = 50:</p>
+
+<table>
+  <tr><th>Lag |k|</th><th>Forward cos(c<sub>q</sub>, c<sub>q+k</sub>)</th><th>Backward cos(c<sub>q</sub>, c<sub>q−k</sub>)</th><th>Difference</th></tr>
+  <tr><td>1</td><td>0.9502</td><td>0.9508</td><td>−0.0006 (bw <em>higher</em>)</td></tr>
+  <tr><td>5</td><td>0.7756</td><td>0.7777</td><td>−0.0020 (bw <em>higher</em>)</td></tr>
+  <tr><td>10</td><td>0.5935</td><td>0.5928</td><td>+0.0007</td></tr>
+  <tr><td>15</td><td>0.4573</td><td>0.4660</td><td>−0.0087 (bw <em>higher</em>)</td></tr>
+  <tr><td>20</td><td>0.3551</td><td>0.3614</td><td>−0.0063 (bw <em>higher</em>)</td></tr>
+</table>
+
+<p>The difference is < 0.01 at all lags — <strong>noise-level</strong> — and fluctuates in sign. There is no consistent forward cosine advantage in the raw geometry. The "item sharing" intuition fails because two competing effects nearly cancel:</p>
+
+<h3>4.2 Two Competing Effects That Cancel</h3>
+
+<div class="equation-box">
+  \[
+  \underbrace{\cos(c_q, c_{q+k})}_{\text{forward cosine}}
+  \;=\; \frac{
+  \overbrace{\sum_{i=1}^{q} \underbrace{w_i^{(q)} w_i^{(q+k)}}_{\substack{\text{shared item} \\ \text{contributions}}}}^{\text{larger numerator — more shared items}}
+  }{
+  \underbrace{\|c_q\| \cdot \|c_{q+k}\|}_{\text{larger denominator — forward has larger norm}}
+  }
+  \]
+</div>
+
+<table>
+  <tr><th></th><th>Effect on numerator</th><th>Effect on denominator</th><th>Net</th></tr>
+  <tr><td><strong>Forward (c<sub>q+k</sub>)</strong></td><td style="color:#33A02C;">+1.1% larger (50 shared items vs. 40)</td><td style="color:#E31A1C;">+0.7% larger (unshared items add norm)</td><td>Nearly cancels</td></tr>
+  <tr><td><strong>Backward (c<sub>q−k</sub>)</strong></td><td>Smaller (only 40 shared items)</td><td style="color:#33A02C;">Smaller (no unshared items)</td><td>Nearly cancels</td></tr>
+</table>
+
+<p>The forward context shares <em>more</em> items with the query (increasing the dot product numerator) — but also <em>accumulates unshared items</em> that increase its norm (increasing the cosine denominator). These two effects offset each other almost perfectly, leaving a cosine difference of only ~0.002 — far too small to drive the observed behavioral bias of +5.1 asymmetry.</p>
+
+<h3>4.3 So What <em>Does</em> Create the Bias?</h3>
+
+<p>The raw TCM geometry has no consistent forward asymmetry. The bias must emerge from the <strong>learned K and Q projections</strong>. These matrices (16 &times; more parameters than all other learned params combined) reshape how contexts are compared:</p>
+
+<div class="equation-box">
+  \[
+  \text{score}(c_i, c_q) = \frac{K(c_i) \cdot Q(c_q)}{T}
+  \;\;=\;\; \frac{c_i^{\top} \, \underbrace{(K^{\top}Q)}_{\text{learned bilinear form } M} \, c_q}{T}
+  \]
+</div>
+
+<p>K and Q jointly learn a 64&times;64 bilinear form <em>M</em> that weights context dimensions differentially. This form:</p>
+
+<ul>
+  <li>Amplifies dimensions where contexts vary systematically with position</li>
+  <li>Suppresses dimensions dominated by random item noise</li>
+  <li>Together with learned temperature T ≈ 0.34, creates a sharply peaked attention distribution centered near (but slightly forward of) the true query position</li>
+</ul>
+
+<p>The precise mechanism by which K and Q produce a consistent forward bias — despite the raw geometry being essentially symmetric — remains an open mechanistic question. Empirically, the ablation is definitive: <strong>without K and Q, the bias disappears</strong> (Section 6.1). And the encoder ablation shows that replacing TCM with a learned GRU <strong>also eliminates the bias</strong> (Section 6.2). The bias requires <em>both</em> the TCM's specific dynamics <em>and</em> learned attention projections — neither alone is sufficient.</p>
+
+<h3>4.4 Why the Error Pattern is Asymmetric</h3>
+
+<p>Although the per-lag mechanism remains under investigation, the <em>shape</em> of the error curve can be explained by the position-dependent availability of forward distractors:</p>
+
+<table>
+  <tr><th>Query at</th><th>Nearby forward positions?</th><th>Result</th></tr>
+  <tr><td><strong>20%</strong></td><td>Many (21, 22, 23, ...)</td><td>Large cumulative forward bias → <strong>+16% error</strong></td></tr>
+  <tr><td><strong>40%</strong></td><td>Moderate number</td><td>Moderate bias → <strong>+6% error</strong></td></tr>
+  <tr><td><strong>60%</strong></td><td>Fewer forward, more backward at small lags</td><td>Reduced bias → <strong>−2% error</strong></td></tr>
+  <tr><td><strong>80%</strong></td><td>Very few forward at small lags</td><td>Bias compressed → <strong>−10% error</strong></td></tr>
+</table>
+
+<p>Regardless of the exact per-lag mechanism, the <em>asymmetry</em> (+5.1 model vs. +5.9 human) follows from the fact that early queries are surrounded by more forward distractors than late queries.</p>
+
+<!-- ============================================================ -->
+<h2>5. Model Architecture — Complete Summary</h2>
+
+<div class="two-col">
+  <div>
+    <h3>Encodable Parameters</h3>
+    <table>
+      <tr><th>Symbol</th><th>Shape</th><th># Params</th><th>What it learns</th></tr>
+      <tr><td style="color:var(--learned-border);"><strong>P</strong></td><td>64&times;64</td><td>4,096</td><td>Useful coordinate system for items</td></tr>
+      <tr><td style="color:var(--learned-border);"><strong>K</strong></td><td>64&times;64</td><td>4,096</td><td>How to represent stored contexts</td></tr>
+      <tr><td style="color:var(--learned-border);"><strong>Q</strong></td><td>64&times;64</td><td>4,096</td><td>How to represent the query</td></tr>
+      <tr><td style="color:var(--learned-border);"><strong>T</strong></td><td>scalar</td><td>1</td><td>Softmax sharpness</td></tr>
+      <tr><td colspan="2" style="text-align:right;font-weight:600;">Total</td><td><strong>12,289</strong></td><td></td></tr>
+    </table>
+  </div>
+  <div>
+    <h3>Fixed Hyperparameters</h3>
+    <table>
+      <tr><th>Symbol</th><th>Value</th><th>What it controls</th></tr>
+      <tr><td style="color:var(--fixed-border);"><strong>&rho;</strong></td><td>0.95</td><td>How much old context is retained</td></tr>
+      <tr><td style="color:var(--fixed-border);"><strong>&sigma;<sub>m</sub></strong></td><td>0.05</td><td>How much noise corrupts the query</td></tr>
+      <tr><td style="color:var(--fixed-border);"><strong>d</strong></td><td>64</td><td>Dimensionality of all vectors</td></tr>
+      <tr><td style="color:var(--fixed-border);"><strong>i/(L&minus;1)</strong></td><td>—</td><td>Position template (hardcoded)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>6. What We Tested — And What We Learned</h2>
+
+<h3>6.1 Parameter Ablation</h3>
+
+<figure>
+  <img src="figures/ablation_learned_params.png" alt="Ablation study">
+  <figcaption>Systematic removal of learned parameters. <strong>Critical:</strong> K and Q are essential — without them, the model collapses to outputting ~50% for all queries. P is optional (2&times; slower convergence, same final result).</figcaption>
+</figure>
+
+<table>
+  <tr><th>Variant</th><th>Result</th></tr>
+  <tr><td>Full (P + K + Q + T)</td><td>✓ Asymmetry +4.3, human-like pattern</td></tr>
+  <tr><td>Remove P</td><td>✓ Asymmetry +3.4, 2× slower convergence (P compresses context from 10D to 4D)</td></tr>
+  <tr><td>Remove K, Q (raw dot product)</td><td style="color:#E31A1C;">✗ Collapses — constant ~50% output</td></tr>
+  <tr><td>Zero parameters (raw cosine)</td><td style="color:#E31A1C;">✗ Completely fails</td></tr>
+</table>
+
+<h3>6.2 Encoder Relaxation — GRU, RNN, BiGRU</h3>
+
+<table>
+  <tr><th>Encoder</th><th>Errors [20/40/60/80]%</th><th>Asymmetry</th></tr>
+  <tr><td><strong>TCM (&rho;=0.95)</strong></td><td>[+15.7, +5.8, &minus;1.8, &minus;9.6]</td><td style="color:#E31A1C;"><strong>+5.1</strong></td></tr>
+  <tr><td>GRU (gated recurrent unit)</td><td>[+0.3, +0.3, +0.4, +0.3]</td><td>~0</td></tr>
+  <tr><td>Simple RNN (tanh)</td><td>Seed-dependent collapse or ~0 bias</td><td>~0</td></tr>
+  <tr><td>BiGRU (bidirectional)</td><td>[&minus;0.2, &minus;0.3, &minus;0.1, +0.4]</td><td>~0</td></tr>
+</table>
+
+<p><strong>Forward-only recurrence is not sufficient.</strong> Learned RNNs eliminate the bias by learning near-perfect position estimation. The TCM's un-gated, fixed-exponential dynamics are what create the systematic error pattern — the model's <em>imperfection is its scientific value</em>.</p>
+
+<h3>6.3 Decoder Relaxation — Removing the Template</h3>
+
+<figure>
+  <img src="figures/pos_fn_all_params.png" alt="Learned position functions">
+  <figcaption>When the hardcoded (i/L) template is replaced with a learned function f(t), every model converges to f(t) = a·t + b with a &lt; 1 (compression) and b &gt; 0 (upward shift). This produces <em>negative</em> asymmetry — the wrong sign. The template's endpoint anchoring (f(0)=0, f(1)=1) is essential for preserving the correct sign.</figcaption>
+</figure>
+
+<h3>6.4 Training Optimization</h3>
+
+<figure>
+  <img src="figures/lr_epochs_heatmap.png" alt="LR x Epochs grid">
+  <figcaption>Grid search over learning rate (rows) and training epochs (columns). The default (5×10⁻⁴, 2K) was significantly under-trained. Optimum at LR=5×10⁻², 4K epochs improves human fit by 3×.</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2>7. The Mechanism — Honest Summary</h2>
+
+<div class="note">
+<strong>What we know:</strong> The bias requires three ingredients — (1) forward-only autoregressive TCM dynamics, (2) learned K and Q attention projections, and (3) a hardcoded linear position template. Remove any one and the bias disappears. <strong>What we don't yet fully understand:</strong> exactly how K and Q convert the nearly-symmetric raw TCM geometry into a consistent forward bias. The "item sharing → cosine asymmetry" story is a tempting but incorrect simplification. The real mechanism involves the interaction of learned bilinear forms with the full distribution of attention scores across all positions.
+</div>
+
+<div class="mechanism">
+  <div class="row">
+    <div class="box" style="background:#FAC775; color:#633806;">
+      TCM recurrence<br>
+      <span style="font-size:12px;font-weight:400;">c<sub>t</sub> = &rho;·c<sub>t-1</sub> + (1-&rho;)·f<sub>t</sub></span>
+    </div>
+    <span class="arrow">+</span>
+    <div class="box" style="background:#EEEDFE; color:#3C3489;">
+      Learned K, Q<br>
+      <span style="font-size:12px;font-weight:400;">Bilinear form M = K<sup>T</sup>Q</span>
+    </div>
+    <span class="arrow">→</span>
+    <div class="box" style="background:#E1F5EE; color:#085041;">
+      Forward-skewed &alpha;<br>
+      <span style="font-size:12px;font-weight:400;">Attention via softmax</span>
+    </div>
+    <span class="arrow">→</span>
+    <div class="box" style="background:#FAECE7; color:#712B13; border:2px solid #E31A1C;">
+      <strong>Position bias</strong><br>
+      <span style="font-size:12px;font-weight:400;">Asymmetry +5.1</span>
+    </div>
+  </div>
+</div>
+
+<h2>8. Key Results Summary</h2>
+
+<table>
+  <tr><th>Finding</th><th>Evidence</th></tr>
+  <tr><td>Model matches human asymmetry</td><td>+5.1 vs. human +5.9 at &rho;=0.95, &sigma;<sub>m</sub>=0.05, LR=5&times;10⁻², 4K ep</td></tr>
+  <tr><td>TCM dynamics are necessary</td><td>GRU, RNN, BiGRU all eliminate the bias</td></tr>
+  <tr><td>K and Q are essential</td><td>Without them, model collapses to outputting ~0.5</td></tr>
+  <tr><td>P is optional</td><td>2&times; speedup via dimensionality focusing; same final result</td></tr>
+  <tr><td>Template is essential</td><td>Learned f(t) &rarr; wrong-sign asymmetry</td></tr>
+  <tr><td>Bias mechanism: K + Q + T</td><td>Requires learned attention; raw cosine asymmetry is noise-level. Precise per-lag mechanism under investigation.</td></tr>
+  <tr><td>Training optimizable</td><td>LR=5&times;10⁻², 4K ep improves human fit 3&times; vs. default</td></tr>
+</table>
+
+<p style="text-align: center; color: var(--muted); font-size: 13px; margin-top: 48px;">
+  <em>Report by Kai — Professor of Computational Cognitive Neuroscience and Editor at Nature Neuroscience.</em>
+</p>
+
+</body>
+</html>
