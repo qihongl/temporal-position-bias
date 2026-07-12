@@ -105,9 +105,9 @@ def load_attn_averaged(rho, sigma):
     """Average raw attention weights (cosine similarity + softmax) across seeds."""
     import torch, torch.nn.functional as F
 
-    n_seeds = 5
+    n_seeds = 10
     all_w = {pf: [] for pf in TEST_POSITIONS}
-    for seed in range(42, 47):
+    for seed in range(42, 52):
         torch.manual_seed(seed)
         items = torch.randn(1, SEQ_TEST, D)
         enc = TCMEncoder(rho, D, D)
@@ -142,9 +142,9 @@ def load_sim_averaged(rho, sigma):
     """Average context similarity matrix across seeds."""
     import torch, torch.nn.functional as F
 
-    n_seeds = 5
+    n_seeds = 10
     all_sims = []
-    for seed in range(42, 47):
+    for seed in range(42, 52):
         torch.manual_seed(seed)
         items = torch.randn(1, SEQ_TEST, D)
         enc = TCMEncoder(rho, D, D)

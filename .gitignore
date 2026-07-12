@@ -2,7 +2,9 @@ logs*/
 legacy/
 paper/
 .workbuddy/
+.openscience/
 figures_notmpl/
+old/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
