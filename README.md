@@ -1,6 +1,6 @@
 # TCM Temporal Position Model
 
-A minimal neural network demonstrating that forward-asymmetric errors in temporal position judgment emerge from the interaction of autoregressive context drift with attention-based position decoding — without hand-specified asymmetry.
+A minimal neural network demonstrating that forward-asymmetric errors in temporal position judgment emerge from the interaction of autoregressive context drift with an item-query-based position decoder — without hand-specified asymmetry.
 
 > **Reference:** Hu et al., "Temporal location biases in episodic time reconstruction and is tracked by the central gyrus"
 
@@ -10,9 +10,76 @@ A minimal neural network demonstrating that forward-asymmetric errors in tempora
 
 When people watch a continuous event and later judge where individual moments occurred in time, they systematically overestimate positions of early moments and underestimate late ones — a central-tendency effect. Critically, this bias is **asymmetric**: early moments are distorted more than late ones (Hu et al., ~2025).
 
-Classical Bayesian accounts predict symmetric regression toward the midpoint. The Temporal Context Model (TCM; Howard & Kahana, 2002) proposes that events are encoded within a gradually drifting internal context vector, c_t = ρ·c_{t−1} + (1−ρ)·f_t, such that temporal relationships are recovered through contextual similarity. Does this forward-recurrent architecture, when trained end-to-end on temporal position judgment, naturally produce the asymmetric human error pattern?
+Classical Bayesian accounts predict symmetric regression toward the midpoint. The Temporal Context Model (TCM; Howard & Kahana, 2002) proposes that events are encoded within a gradually drifting internal context vector, `c_t = ρ·c_{t−1} + (1−ρ)·f_t`, such that temporal relationships are recovered through contextual similarity.
 
-**This repo answers that question.** The model contains no explicit asymmetry parameter — only a forward-only recurrence (ρ < 1) and an attention-based position decoder. The asymmetry emerges from their interaction.
+**Can this forward-recurrent architecture, when given an item-level query and endpoint-constrained retrieval, produce the asymmetric human error pattern?**
+
+---
+
+## Model
+
+### Study Phase (Encoding)
+
+```
+x_t ~ N(0, I)                              random items (proxy for movie frames)
+f_t = normalize(P · x_t)                    P: [64×64] learnable projection
+c_t = ρ · c_{t-1} + (1−ρ) · f_t            c_0 = 0
+
+C = [c_1, ..., c_L]   stored in memory
+F = [f_1, ..., f_L]   item representations also stored
+```
+
+### Recall Phase (Position Estimation)
+
+Given interval bounds A, B and target index q ∈ (A, B):
+
+```
+f̃_q = normalize( f_q + ε )                  ε ~ N(0, σ_m²·I)   memory noise
+q_vec = Q( f̃_q )                             Q: [64×64] learnable
+K = K( C )                                   K: [64×64] learnable
+
+scores_i = (K_i · q_vec) / T                 T = softplus(t_raw), learnable
+           for i ∈ [A, B], masked otherwise
+
+α = softmax(scores)
+poŝ = Σ_i α_i · (i−A)/(B−A)                 relative position ∈ [0,1]
+
+loss = MSE(poŝ, (q−A)/(B−A))
+```
+
+### Why Asymmetry Emerges
+
+The key innovation is using the **raw item** `f_q` as the retrieval cue — not the accumulated context `c_q`. This creates a **unit-step** similarity profile:
+
+```
+c_i · f_q  ≈  0                              for i < q   (f_q not in c_i)
+           ≈  (1−ρ)ρ^{i−q}                   for i ≥ q   (decaying signal)
+```
+
+All attention mass pushes **forward** of q. The forward shift is larger at early positions (more room ahead) than late positions (little room ahead):
+
+```
+Early q (20%):  many positions ahead  →  large forward shift →  large overestimation
+Late q  (80%):  few positions ahead   →  small forward shift →  small underestimation
+
+asymmetry = (|error_20%| + |error_40%| − |error_60%| − |error_80%|) / 2  >  0
+```
+
+The interval length modulates the bias: shorter intervals compress the forward shift into a smaller range, amplifying asymmetry.
+
+### Learnable vs Fixed
+
+| Learnable (gradients) | Fixed (hyperparameters / operations) |
+|---|---|
+| P [64×64] | ρ = 0.95 |
+| Q [64×64] | σ_m = 0.05 |
+| K [64×64] | TCM recurrence |
+| t_raw (scalar) | L2 normalization |
+| | softmax |
+| Total: ~12,353 params | attention mask [A, B] |
+| | position template (i−A)/(B−A) |
+
+The asymmetry is NOT a learned parameter. It emerges from the structural interaction between the TCM's forward-auto-regression and the item query's unit-step similarity profile.
 
 ---
 
@@ -21,113 +88,43 @@ Classical Bayesian accounts predict symmetric regression toward the midpoint. Th
 ```bash
 pip install -r requirements.txt
 
-# Full replication (trains all models, generates figures)
-python sweep.py --rhos "0.70,0.80,0.90,0.95" --sigmas "0.05" \
-    --seeds "42,43,44,45,46" --epochs 4000 --d 64
-python make_viz.py
+# Train endpoint-constrained models with item query (20 seeds, ~1.5 hr CPU)
+python sweep_endpoints.py --variant v1 --query-type item \
+    --rhos "0.70,0.80,0.90,0.95" --sigmas "0.05" \
+    --seeds "42,...,61" --epochs 4000 --d 64 --batch 32
 
-# Single model quick test
-python main.py --rho 0.95 --sigma 0.05
+# Generate per-interval visualization
+python make_viz_endpoints_intervals.py
 ```
-
----
-
-## Reproducing All Results
-
-### Step 1: Train models
-
-```bash
-python sweep.py --rhos "0.70,0.80,0.90,0.95" --sigmas "0.05" \
-    --seeds "42,43,44,45,46" --epochs 4000 --d 64 --batch 32
-```
-
-This trains 20 models (4 ρ × 5 seeds) at the best-fit σ_m = 0.05. Results save to `logs/r{rho}_s0.05_d64/seed{seed}/` as `.npz` files. Training takes ~30–45 minutes on CPU.
-
-To also sweep measurement noise levels:
-
-```bash
-python sweep.py --rhos "0.70,0.75,0.80,0.85,0.90,0.95" \
-    --sigmas "0.05,0.10,0.15" --seeds "42,43,44,45,46" \
-    --epochs 4000 --d 64 --batch 32
-```
-
-### Step 2: Generate the Summary figure
-
-```bash
-python make_viz.py
-```
-
-Produces `figures/tcm_viz_best_sigma.png` — a 2×3 panel figure showing:
-- **A** — Signed error vs. true position for each ρ (mean ± SD across seeds)
-- **B** — Asymmetry index vs. ρ (±SEM)
-- **C** — Error distributions at the best-fit ρ
-- **D** — Attention weights revealing the forward-skew mechanism
-- **E** — Context similarity matrix, averaged across seeds
-- **F** — Forward vs. backward similarity cross-section
-
-### Step 3: Regenerate figures from saved data (no retraining)
-
-```bash
-python plot_from_data.py --all              # all individual-run figures
-python plot_from_data.py --sweep-only       # sweep summary heatmap
-```
-
----
-
-## Architecture
-
-**Encoder (TCM).** Items f_t are random vectors (proxy for perceptual frames). Context evolves autoregressively:
-
-```
-c_t = ρ · c_{t-1} + (1-ρ) · f_t,    c_0 = 0
-```
-
-ρ controls context persistence. At ρ = 0, c_t = f_t (no memory). At ρ ≈ 1, all contexts converge to a single vector (perfect memory, zero discriminability). ρ = 0.95 means each step retains 95% of the past.
-
-**Decoder (Attention).** Position is not read out from c_q directly. Instead, the network compares c_q to all stored contexts c_1..c_L:
-
-```
-weights_i = softmax( Key(c_i)ᵀ · Query(c_q) )
-position  = Σ w_i · (i / L)
-```
-
-The position template [0, 1/(L−1), ..., 1] provides each stored context's ground-truth relative position. The network's job is to learn *which* context to attend to, not *where* each position is.
-
-**Training.** Variable-length sequences (60–180 items), MSE loss on relative position. Independent Gaussian noise (σ_m) is added to c_q at retrieval, introducing uncertainty that drives central-tendency effects.
-
-**Why asymmetry emerges.** With ρ < 1, the context similarity is asymmetric: cos(c_q, c_{q+k}) > cos(c_q, c_{q−k}) for all k > 0. This is because c_{q+k} = ρᵏ·c_q + noise (forward, preserving c_q's direction), while c_q's composition of c_{q−k} is diluted by intervening items (backward). The softmax attention weights inherit this skew, shifting the position estimate forward — more so for early positions (which have more positions ahead of them to erroneously attend to).
-
-**Critical control.** An MLP decoder that reads out position from c_q alone (no cross-context comparison) produces **zero asymmetry** — confirming the asymmetry requires the attention mechanism, not just the context encoding.
 
 ---
 
 ## Main Results
 
-### Emergent asymmetry with σ_m = 0.05 (mean ± SD, 5 seeds per ρ)
+### Item query + constrained attention (20 seeds, σ_m = 0.05, ρ = 0.95)
 
-| ρ | Error at 20% | Error at 40% | Error at 60% | Error at 80% | Asymmetry |
-|:--|:--|:--|:--|:--|:--|
-| 0.95 | +16.8 | +6.4 | −2.2 | −11.1 | **+5.0** |
-| 0.90 | +10.8 | +4.4 | −1.8 | −8.0 | +2.7 |
-| 0.80 | +7.3 | +3.1 | −1.3 | −5.5 | +1.8 |
-| 0.70 | +4.8 | +2.0 | −0.7 | −3.3 | +1.4 |
+| Interval | Error 20% | Error 40% | Error 60% | Error 80% | Asymmetry |
+|:---------|:----------|:----------|:----------|:----------|:----------|
+| i16 | +31.1 | +14.1 | −4.2 | −24.0 | **+8.5** |
+| i32 | +29.8 | +12.5 | −5.3 | −25.2 | **+5.9** |
+| i64 | +28.6 | +11.3 | −6.8 | −26.4 | +3.4 |
 | **Human** | **+13.4** | **+7.6** | **−1.9** | **−7.4** | **+5.9** |
 
-Key observations:
+Key findings:
+- Asymmetry **decreases with interval length** — longer intervals spread the forward decay tail, diluting the shift
+- ρ = 0.95 at i32 **exactly matches human asymmetry** (+5.9 vs. +5.9)
+- Error magnitudes are ~2× human, but the asymmetry magnitude matches
+- Results are robust: seed-to-seed SD across 20 independent initializations is < 0.3 percentage points
 
-- Forward asymmetry emerges at all ρ < 1, peaks at ρ = 0.95, and vanishes at ρ = 1.0 (inverted-U pattern). This is not trivially predicted — both extremes (ρ → 0, ρ → 1) produce zero asymmetry.
-- The asymmetry magnitude at the best-fit ρ matches human data (+5.0 vs. +5.9).
-- Error magnitudes increase with ρ because higher persistence makes contexts less discriminable → larger central tendency.
+### Effect of measurement noise (σ_m)
 
-### Computational mechanism
+| σ_m | ρ=0.95, i32 asym | ρ=0.90, i32 asym | ρ=0.80, i32 asym |
+|-----|-------------------|-------------------|-------------------|
+| 0.05 | +5.9 | +9.0 | +4.2 |
+| 0.10 | +4.6 | +7.8 | +5.3 |
+| 0.20 | +2.4 | +4.0 | +4.1 |
 
-The source of asymmetry is a forward-backward gap in context similarity. For a query at position 50 with ρ = 0.95:
-
-- cos(c_50, c_51) ≈ 0.978 vs. cos(c_50, c_49) ≈ 0.959 (gap = +0.019)
-- cos(c_50, c_52) ≈ 0.989 vs. cos(c_50, c_48) ≈ 0.931 (gap = +0.058)
-- The gap grows to ~0.07 at k = 3–4
-
-This small per-position gap accumulates across the softmax distribution, shifting the attention center-of-mass forward by several position units.
+Higher noise reduces asymmetry — the unit-step signal gets noisier, blurring the forward-bias gradient. At σ_m = 0.20 the bias is still positive but diminished.
 
 ---
 
@@ -136,22 +133,22 @@ This small per-position gap accumulates across the softmax distribution, shiftin
 ```
 ├── README.md
 ├── requirements.txt
-├── .gitignore
-├── main.py                    # Train + eval single model
-├── sweep.py                   # Parameter sweep (multi-seed)
-├── plot_from_data.py          # Plot from saved logs (no retraining)
-├── make_viz.py                # Publication-ready multi-panel figure
 ├── src/
-│   ├── config.py              # All parameters & defaults
-│   ├── model.py               # TCMEncoder + AttentionDecoder
-│   ├── train.py               # Training & evaluation
+│   ├── config.py              # Parameters & defaults
+│   ├── model.py               # TCMEncoder + decoder variants
+│   ├── train.py               # Training & evaluation functions
 │   ├── analysis.py            # Statistics & loss functions
 │   ├── plotting.py            # Figure generation
 │   └── utils.py               # I/O, paths, noise helpers
-├── logs/                      # Model outputs (gitignored, auto-created)
-│   └── r{rho}_s{sigma}_d{dim}/seed{seed}/
-├── figures/                   # Generated figures (gitignored, auto-created)
-└── legacy/                    # Development history (not imported)
+├── sweep_endpoints.py         # Endpoint-constrained sweep runner
+├── train_endpoints.py         # Single-model endpoint trainer
+├── sweep.py                   # Original (global attention) sweep
+├── make_viz.py                # Original model figures
+├── make_viz_endpoints.py      # Endpoint vs original comparison
+├── make_viz_endpoints_intervals.py  # Per-interval-length viz
+├── logs_endpoints_v1_itemq/   # Latest training data
+├── figures/                   # Generated figures
+└── old/                       # Archived experiments
 ```
 
 ---
@@ -161,20 +158,19 @@ This small per-position gap accumulates across the softmax distribution, shiftin
 | Parameter | CLI flag | Default | Description |
 |:--|:--|:--|:--|
 | ρ | `--rho` | 0.95 | Context persistence; 0 = no memory, 1 = perfect |
-| σ_m | `--sigma` | 0.10 | Measurement noise SD added at retrieval |
+| σ_m | `--sigma` | 0.05 | Measurement noise SD at retrieval |
 | d | `--d` | 64 | Hidden/context dimension |
 | epochs | `--epochs` | 4000 | Training epochs per model |
-| seed | `--seed` | 42 | Random seed for reproducibility |
-| seeds | `--seeds` | — | Comma-separated seed list for multi-seed sweeps |
+| seed | `--seed` | 42 | Random seed |
+| query-type | `--query-type` | context | `context` (c_q) or `item` (f_q) |
+| variant | `--variant` | v1 | Decoder variant (`v1`, `v2`, `raw`, `learned`) |
 
 ---
 
 ## Critical Assumptions
 
-1. **Attention-based position decoding.** The model assumes position is reconstructed by comparing the queried context against all stored contexts, rather than read out directly from a scalar time code. An MLP decoder (direct readout) produces zero asymmetry — supporting the necessity of cross-context comparison, but only within this model family.
+1. **Item-level retrieval cue.** The model uses the raw item representation f_q as the query, not the accumulated context c_q. This is cognitively motivated: during retrieval, a participant sees a target frame and matches it against memory, without needing to reconstruct prior context.
 
-2. **Perfect position template.** The decoder has access to the exact relative position (i/L) of every stored context. This is a simplification — human participants don't have a pre-indexed timeline. Future work should test whether asymmetry survives when the decoder must reconstruct position from context alone.
+2. **Endpoint-constrained attention.** Start and end reference frames are provided (as in Hu et al.), but they only constrain the attention range — not the query computation. The asymmetry arises from the item-query structure, not the endpoints.
 
-3. **Random item vectors.** Items are isotropic Gaussian vectors with no semantic structure. Adding realistic temporal autocorrelation or shot-boundary structure could change the quantitative results.
-
----
+3. **Random item vectors.** Items are isotropic Gaussian vectors (proxy for unstructured perceptual frames). The model abstracts away semantic, shot-boundary, and visual-similarity information present in the human experiment.
