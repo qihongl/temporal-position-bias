@@ -1,8 +1,13 @@
 logs*/
 legacy/
 paper/
+.claude/
 .workbuddy/
+.openscience/
 figures_notmpl/
+old/
+CLAUDE.md
+AGENTS.md
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

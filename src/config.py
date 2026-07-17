@@ -35,5 +35,10 @@ SWEEP_BATCH = 32
 # ---- Decoder configuration ----
 USE_POSITION_TEMPLATE = True   # False → learned MLP decoder (no (i/L) template)
 
+# ---- Endpoint-constrained model ----
+MIN_INTERVAL = 10             # minimum A-B separation during training
+SEQ_MIN_ENDPOINT = 120        # min training sequence length for endpoint model
+INTERVAL_LENGTHS_TEST = [8, 16, 32, 64]  # test interval lengths for endpoint model
+
 # ---- Human benchmark (Hu et al.) ----
 HUMAN_ERRORS = [13.41, 7.57, -1.91, -7.36]  # at 20%, 40%, 60%, 80%

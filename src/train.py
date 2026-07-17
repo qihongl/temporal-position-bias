@@ -1,15 +1,17 @@
 """
 Training and Evaluation Utilities
 ==================================
+The query is always c_q (accumulated context vector).
 """
 
 import torch
 import numpy as np
-from .model import TCMEncoder, AttentionDecoder
+from .model import TCMEncoder, AttentionDecoder, SimpleRNNEncoder
 from .utils import apply_noise
 from .config import (
     D_ITEM, D_CONTEXT, EPOCHS, BATCH_SIZE, LR,
-    SEQ_MIN, SEQ_MAX, SEQ_TEST, TEST_POSITIONS, N_TEST_PER_POS, EVAL_BATCH,
+    SEQ_MIN, SEQ_MAX, SEQ_TEST, TEST_POSITIONS,
+    N_TEST_PER_POS, EVAL_BATCH,
 )
 
 
@@ -23,8 +25,7 @@ def train_model(rho, sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
                 use_position_template=True, use_proj=True, lr=LR):
     """Train a single TCM model with attention decoder.
 
-    Returns:
-        (encoder, decoder, train_loss): final epoch MSE (scalar).
+    Query is always c_q (context vector at position q).
     """
     torch.manual_seed(seed)
     np.random.seed(seed)
@@ -59,8 +60,7 @@ def evaluate_model(encoder, decoder, sigma_m,
                    d_item=D_ITEM):
     """Evaluate trained model.
 
-    Returns:
-        dict: position_fraction -> np.array of signed errors (%)
+    Query is always c_q (context vector at position q).
     """
     L = seq_test
     results = {}
@@ -99,5 +99,32 @@ def get_attention_weights(encoder, decoder, sigma_m,
     return attn_data
 
 
-# Backward-compatible re-export
-from .analysis import compute_summary_stats  # noqa: E402, F401
+def train_rnn_model(sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
+                    d_item=D_ITEM, d_context=D_CONTEXT, seed=42,
+                    use_position_template=True, lr=LR):
+    """Train a SimpleRNN encoder with attention decoder (no TCM constraint)."""
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+    encoder = SimpleRNNEncoder(d_item, d_context)
+    decoder = AttentionDecoder(d_context, use_position_template=use_position_template)
+    optimizer = torch.optim.Adam(
+        list(encoder.parameters()) + list(decoder.parameters()), lr=lr)
+    criterion = torch.nn.MSELoss()
+
+    final_loss = None
+    for epoch in range(epochs):
+        L = np.random.randint(SEQ_MIN, SEQ_MAX + 1)
+        items = make_items(batch_size, L, d_item)
+        f, c = encoder(items)
+        q = torch.randint(0, L, (batch_size,))
+        c_q = apply_noise(c[torch.arange(batch_size), q, :], sigma_m)
+        pred = decoder(c_q, c)
+        loss = criterion(pred, q.float() / L)
+        optimizer.zero_grad()
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(
+            list(encoder.parameters()) + list(decoder.parameters()), 1.0)
+        optimizer.step()
+        final_loss = loss.item()
+
+    return encoder, decoder, final_loss

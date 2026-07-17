@@ -50,7 +50,7 @@ POS_COLORS_DARK   = ['#1F78B4', '#33A02C', '#E31A1C', '#6A3D9A']
 SIGMA = 0.05
 RHOS = [0.95, 0.90, 0.80, 0.70]
 HUMAN_BLACK = '#222222'
-LOGS_ROOT = os.path.join(os.path.dirname(__file__), 'logs')
+LOGS_ROOT = os.path.join(os.path.dirname(__file__), 'logs', 'global')
 
 
 def load_seed_means(rho, sigma, d_filter=64):
@@ -105,9 +105,9 @@ def load_attn_averaged(rho, sigma):
     """Average raw attention weights (cosine similarity + softmax) across seeds."""
     import torch, torch.nn.functional as F
 
-    n_seeds = 5
+    n_seeds = 10
     all_w = {pf: [] for pf in TEST_POSITIONS}
-    for seed in range(42, 47):
+    for seed in range(42, 52):
         torch.manual_seed(seed)
         items = torch.randn(1, SEQ_TEST, D)
         enc = TCMEncoder(rho, D, D)
@@ -142,9 +142,9 @@ def load_sim_averaged(rho, sigma):
     """Average context similarity matrix across seeds."""
     import torch, torch.nn.functional as F
 
-    n_seeds = 5
+    n_seeds = 10
     all_sims = []
-    for seed in range(42, 47):
+    for seed in range(42, 52):
         torch.manual_seed(seed)
         items = torch.randn(1, SEQ_TEST, D)
         enc = TCMEncoder(rho, D, D)

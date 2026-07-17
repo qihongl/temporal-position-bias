@@ -81,7 +81,7 @@ def main():
         suffix = f'_{args.log_name}'
     else:
         suffix = '' if use_template else '_notmpl'
-    logs_root = os.path.join(base_dir, f'logs{suffix}')
+    logs_root = os.path.join(base_dir, f'logs/global{suffix}')
     figs_root = os.path.join(base_dir, f'figures{suffix}')
 
     print(f"  Encoder: {'TCM with projection P' if not args.no_proj else 'TCM without projection P (raw items)'}")
