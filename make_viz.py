@@ -50,7 +50,7 @@ POS_COLORS_DARK   = ['#1F78B4', '#33A02C', '#E31A1C', '#6A3D9A']
 SIGMA = 0.05
 RHOS = [0.95, 0.90, 0.80, 0.70]
 HUMAN_BLACK = '#222222'
-LOGS_ROOT = os.path.join(os.path.dirname(__file__), 'logs')
+LOGS_ROOT = os.path.join(os.path.dirname(__file__), 'logs', 'global')
 
 
 def load_seed_means(rho, sigma, d_filter=64):

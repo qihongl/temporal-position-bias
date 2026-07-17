@@ -41,7 +41,7 @@ SIGMA = 0.05
 RHOS = [0.95, 0.90, 0.80, 0.70]
 INTERVALS = INTERVAL_LENGTHS_TEST
 HUMAN_BLACK = '#222222'
-LOGS_ROOT = os.path.join(os.path.dirname(__file__), 'logs_endpoints')
+LOGS_ROOT = os.path.join(os.path.dirname(__file__), 'logs', 'endpoints_v1_itemq')
 
 from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize

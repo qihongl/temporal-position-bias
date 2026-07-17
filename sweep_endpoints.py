@@ -22,7 +22,7 @@ from src.config import (
     TEST_POSITIONS, HUMAN_ERRORS, SEQ_MIN_ENDPOINT, SEQ_MAX,
     INTERVAL_LENGTHS_TEST,
 )
-from src.train import (
+from src.train_endpoints import (
     train_model_endpoints, train_model_endpoints_v2, train_model_projection,
     evaluate_model_endpoints, evaluate_model_endpoints_v2, evaluate_model_projection,
 )
@@ -68,7 +68,7 @@ def main():
     sigmas = [float(s) for s in args.sigmas.split(',')]
     seeds = [int(s) for s in args.seeds.split(',')] if args.seeds else [args.seed]
     base_dir = os.path.abspath('.')
-    logs_root = os.path.join(base_dir, f'logs_endpoints_{args.variant}')
+    logs_root = os.path.join(base_dir, f'logs/endpoints_{args.variant}')
     if args.query_type == 'item':
         logs_root += '_itemq'
 

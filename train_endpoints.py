@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from src.config import (
     D_ITEM, D_CONTEXT, TEST_POSITIONS, HUMAN_ERRORS,
 )
-from src.train import train_model_endpoints, evaluate_model_endpoints
+from src.train_endpoints import train_model_endpoints, evaluate_model_endpoints
 from src.analysis import compute_summary_stats, compute_human_loss
 from src.utils import log_dir, save_results
 
@@ -51,7 +51,7 @@ def main():
     print(f"  asymmetry: {asymmetry:+.1f}, loss: {loss_val:.1f}, MAE: {eval_mae:.2f}%, train MSE: {train_mse:.6f}")
     print(f"  Human:  {HUMAN_ERRORS}")
 
-    ldir = log_dir(args.rho, args.sigma, args.d, args.seed, base='logs_endpoints')
+    ldir = log_dir(args.rho, args.sigma, args.d, args.seed, base='logs/endpoints')
     save_results(ldir, errors, {}, args.rho, args.sigma,
                  metadata={'epochs': args.epochs, 'loss': loss_val,
                            'asymmetry': asymmetry, 'd': args.d, 'seed': args.seed,

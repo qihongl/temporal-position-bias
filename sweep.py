@@ -52,9 +52,6 @@ def main():
                         help='Custom log directory name (e.g., "replication")')
     parser.add_argument('--no-proj', action='store_true',
                         help='Remove learned projection P; feed raw items to TCM')
-    parser.add_argument('--query-type', type=str, default='context',
-                        choices=['context', 'item'],
-                        help='Query type: context (c_q) or item (f_q)')
     args = parser.parse_args()
 
     rhos = [float(r) for r in args.rhos.split(',')]
@@ -84,9 +81,7 @@ def main():
         suffix = f'_{args.log_name}'
     else:
         suffix = '' if use_template else '_notmpl'
-    if args.query_type == 'item':
-        suffix += '_item_query'
-    logs_root = os.path.join(base_dir, f'logs{suffix}')
+    logs_root = os.path.join(base_dir, f'logs/global{suffix}')
     figs_root = os.path.join(base_dir, f'figures{suffix}')
 
     print(f"  Encoder: {'TCM with projection P' if not args.no_proj else 'TCM without projection P (raw items)'}")
@@ -112,12 +107,10 @@ def main():
                     d_item=D_ITEM, d_context=args.d, seed=seed,
                     use_position_template=use_template,
                     use_proj=not args.no_proj,
-                    query_type=args.query_type,
                 )
 
                 # Evaluate
-                errors = evaluate_model(encoder, decoder, sm, d_item=D_ITEM,
-                                        query_type=args.query_type)
+                errors = evaluate_model(encoder, decoder, sm, d_item=D_ITEM)
                 attn = get_attention_weights(encoder, decoder, sm, d_item=D_ITEM)
                 means, _, asymmetry = compute_summary_stats(errors)
                 loss_val = compute_human_loss(means)
