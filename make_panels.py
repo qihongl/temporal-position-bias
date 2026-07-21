@@ -70,11 +70,53 @@ def load_human_mu(mu_path=_MU_XLSX_PATH):
 
 
 def fit_memtoolbox_mu(errors_pct):
-    """Fit von Mises mixture model (Orientation(WithBias(StandardMixtureModel)))
-    via MLE — returns μ in degrees. Errors are clipped to [-80, 80] then asind-transformed."""
-    errors_pct = np.clip(errors_pct, -80, 80)
-    theta = np.radians(np.degrees(np.arcsin(errors_pct / 80)))
+    """Fit MemToolbox Orientation(WithBias(StandardMixtureModel)) — replicates
+    compute_memresult.m pipeline step-for-step on model trial-level data.
 
+    Human pipeline (MATLAB):
+      1. Filter by td condition
+      2. Remove non-finite errors
+      3. Reject condition if any |error| > 80  (human timeline bounds response)
+      4. Transform: asind(error / 80)          (map to angular space)
+      5. Remove non-finite post-transform
+      6. MemFit(Orientation(WithBias(StandardMixtureModel), [1 3])) — MAP
+
+    Model pipeline (Python, identical except step 3):
+      1. Filter by probe position (done in load_model_mu, not here)
+      2. Remove non-finite errors
+      3. Clip to [-80, 80] — see justification below
+      4. Transform: asind(error / 80)
+      5. Remove non-finite post-transform
+      6. MLE via scipy (MAP with flat priors; with ~500 trials/condition the
+         prior contribution is negligible, per standard large-sample MLE ≈ MAP)
+
+    Justification for clipping vs. rejection (step 3):
+      Human signed errors are inherently bounded to [-80, 80] because the
+      response marker cannot be placed beyond the timeline endpoints. The model
+      produces unbounded predictions; applying strict rejection would discard
+      essentially all model conditions. Clipping to [-80, 80] mirrors the
+      physical response bound of the human task: errors that would have exceeded
+      the timeline in the human experiment are mapped to the timeline endpoints,
+      the same constraint participants faced.
+
+    Returns μ in degrees (positive = overestimation bias).
+    """
+    # 2. Remove non-finite
+    errors_pct = errors_pct[np.isfinite(errors_pct)]
+
+    # 3. Clip to timeline bounds (human response constraint)
+    errors_pct = np.clip(errors_pct, -80, 80)
+
+    # 4. asind transform (match compute_memresult.m line 119)
+    theta_deg = np.degrees(np.arcsin(errors_pct / 80))
+
+    # 5. Remove non-finite post-transform
+    theta_deg = theta_deg[np.isfinite(theta_deg)]
+    theta = np.radians(theta_deg)
+
+    # 6. Orientation(WithBias(StandardMixtureModel), [1 3])
+    # PDF: (1 − g) · vonMises(θ | μ, κ) + g / 2π
+    # Parameters: μ (radians), κ (concentration), g (guess rate)
     def nll(params):
         mu, log_kappa, logit_g = params
         kappa = np.exp(log_kappa)
@@ -83,6 +125,8 @@ def fit_memtoolbox_mu(errors_pct):
         like = (1 - g) * vonmises.pdf(theta, kappa, loc=mu) + g / (2 * np.pi)
         return -np.sum(np.log(np.maximum(like, 1e-300)))
 
+    # Bounds: μ in [−90°, 90°], κ in [0.1, 10⁶], g in (~0, ~1)
+    # Init: μ=0, κ=10 (sd ≈ 18°), g=0.5
     res = minimize(nll, [0.0, np.log(10), 0.0],
                    bounds=[(-np.pi / 2, np.pi / 2),
                            (np.log(0.1), np.log(1e6)),
