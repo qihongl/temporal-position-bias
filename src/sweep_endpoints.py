@@ -15,7 +15,8 @@ import os
 import sys
 import gc
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
 
 from src.config import (
     D_ITEM, D_CONTEXT, SWEEP_EPOCHS, SWEEP_BATCH,
@@ -67,8 +68,8 @@ def main():
     rhos = [float(r) for r in args.rhos.split(',')]
     sigmas = [float(s) for s in args.sigmas.split(',')]
     seeds = [int(s) for s in args.seeds.split(',')] if args.seeds else [args.seed]
-    base_dir = os.path.abspath('.')
-    logs_root = os.path.join(base_dir, f'logs/endpoints_{args.variant}')
+    base_dir = ROOT
+    logs_root = os.path.join(base_dir, 'logs', f'endpoints_{args.variant}')
     if args.query_type == 'item':
         logs_root += '_itemq'
 

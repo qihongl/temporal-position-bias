@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Schematic diagram of the TCM temporal position model."""
+import os
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from matplotlib.patches import FancyBboxPatch
 import numpy as np
 
@@ -144,8 +147,8 @@ legend_ax.legend(handles=[
 ], loc='center', ncol=4, fontsize=9, frameon=False)
 
 fig.tight_layout(rect=[0, 0.08, 1, 1])
-fig.savefig('figures/model_schematic.png', dpi=200, bbox_inches='tight')
-fig.savefig('figures/model_schematic.pdf', bbox_inches='tight')
+fig.savefig(os.path.join(ROOT, 'figures', 'model_schematic.png'), dpi=200, bbox_inches='tight')
+fig.savefig(os.path.join(ROOT, 'figures', 'model_schematic.pdf'), bbox_inches='tight')
 plt.close()
 print('Saved: figures/model_schematic.png')
 print('Saved: figures/model_schematic.pdf')

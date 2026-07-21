@@ -1,7 +1,8 @@
 """
 Training and Evaluation Utilities
 ==================================
-The query is always c_q (accumulated context vector).
+query_type='context': query = c_q (accumulated context vector, default)
+query_type='item':    query = f_q (projected item vector, ablation)
 """
 
 import torch
@@ -22,10 +23,12 @@ def make_items(B, L, d=D_ITEM, device='cpu'):
 
 def train_model(rho, sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
                 d_item=D_ITEM, d_context=D_CONTEXT, seed=42,
-                use_position_template=True, use_proj=True, lr=LR):
+                use_position_template=True, use_proj=True, lr=LR,
+                query_type='context'):
     """Train a single TCM model with attention decoder.
 
-    Query is always c_q (context vector at position q).
+    query_type='context': query is c_q (accumulated context at position q)
+    query_type='item':    query is f_q (projected item at position q)
     """
     torch.manual_seed(seed)
     np.random.seed(seed)
@@ -35,15 +38,18 @@ def train_model(rho, sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
         list(encoder.parameters()) + list(decoder.parameters()), lr=lr)
     criterion = torch.nn.MSELoss()
 
+    use_item_query = (query_type == 'item')
+
     final_loss = None
     for epoch in range(epochs):
         L = np.random.randint(SEQ_MIN, SEQ_MAX + 1)
         items = make_items(batch_size, L, d_item)
         f, c = encoder(items)
         q = torch.randint(0, L, (batch_size,))
-        c_q = apply_noise(c[torch.arange(batch_size), q, :], sigma_m)
+        query_source = f if use_item_query else c
+        c_q = apply_noise(query_source[torch.arange(batch_size), q, :], sigma_m)
         pred = decoder(c_q, c)
-        loss = criterion(pred, q.float() / L)
+        loss = criterion(pred, q.float() / (L - 1))
         optimizer.zero_grad()
         loss.backward()
         torch.nn.utils.clip_grad_norm_(
@@ -57,11 +63,13 @@ def train_model(rho, sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
 def evaluate_model(encoder, decoder, sigma_m,
                    seq_test=SEQ_TEST, test_positions=TEST_POSITIONS,
                    n_test=N_TEST_PER_POS, eval_batch=EVAL_BATCH,
-                   d_item=D_ITEM):
+                   d_item=D_ITEM, query_type='context'):
     """Evaluate trained model.
 
-    Query is always c_q (context vector at position q).
+    query_type='context': query is c_q (accumulated context at position q)
+    query_type='item':    query is f_q (projected item at position q)
     """
+    use_item_query = (query_type == 'item')
     L = seq_test
     results = {}
     for pf in test_positions:
@@ -71,9 +79,11 @@ def evaluate_model(encoder, decoder, sigma_m,
             with torch.no_grad():
                 items = make_items(eval_batch, L, d_item)
                 f, c = encoder(items)
-                c_q = apply_noise(c[:, ti, :], sigma_m)
+                query_source = f if use_item_query else c
+                c_q = apply_noise(query_source[:, ti, :], sigma_m)
                 pred = decoder(c_q, c).cpu().numpy()
-                errors.extend(((pred - pf) * 100).tolist())
+                eval_target = ti / (L - 1)
+                errors.extend(((pred - eval_target) * 100).tolist())
         results[pf] = np.array(errors)
     return results
 
@@ -101,7 +111,8 @@ def get_attention_weights(encoder, decoder, sigma_m,
 
 def train_rnn_model(sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
                     d_item=D_ITEM, d_context=D_CONTEXT, seed=42,
-                    use_position_template=True, lr=LR):
+                    use_position_template=True, lr=LR,
+                    query_type='context'):
     """Train a SimpleRNN encoder with attention decoder (no TCM constraint)."""
     torch.manual_seed(seed)
     np.random.seed(seed)
@@ -111,15 +122,18 @@ def train_rnn_model(sigma_m, epochs=EPOCHS, batch_size=BATCH_SIZE,
         list(encoder.parameters()) + list(decoder.parameters()), lr=lr)
     criterion = torch.nn.MSELoss()
 
+    use_item_query = (query_type == 'item')
+
     final_loss = None
     for epoch in range(epochs):
         L = np.random.randint(SEQ_MIN, SEQ_MAX + 1)
         items = make_items(batch_size, L, d_item)
         f, c = encoder(items)
         q = torch.randint(0, L, (batch_size,))
-        c_q = apply_noise(c[torch.arange(batch_size), q, :], sigma_m)
+        query_source = f if use_item_query else c
+        c_q = apply_noise(query_source[torch.arange(batch_size), q, :], sigma_m)
         pred = decoder(c_q, c)
-        loss = criterion(pred, q.float() / L)
+        loss = criterion(pred, q.float() / (L - 1))
         optimizer.zero_grad()
         loss.backward()
         torch.nn.utils.clip_grad_norm_(
