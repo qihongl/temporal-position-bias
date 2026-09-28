@@ -1,0 +1,49 @@
+{
+  "description": "Additional two-sided one-sample t tests of within-seed early-minus-late mean absolute bias; exploratory, unadjusted. Seeds are the sampling unit. Existing percentile bootstrap CIs retained separately.",
+  "results": {
+    "zero_mu": {
+      "n": 20,
+      "mean": 3.240482557174153,
+      "t": 58.21285168468035,
+      "df": 19,
+      "two_sided_p": 7.041778236000019e-23,
+      "t_95_ci": [
+        3.1239720660407873,
+        3.356993048307519
+      ]
+    },
+    "zero_signed": {
+      "n": 20,
+      "mean": 4.482602119445801,
+      "t": 62.16572648532688,
+      "df": 19,
+      "two_sided_p": 2.0336219770533058e-23,
+      "t_95_ci": [
+        4.331679835692486,
+        4.633524403199115
+      ]
+    },
+    "burnin100_mu": {
+      "n": 20,
+      "mean": 0.0861504690834359,
+      "t": 1.648505048706132,
+      "df": 19,
+      "two_sided_p": 0.11568616026012116,
+      "t_95_ci": [
+        -0.02323045409402795,
+        0.19553139226089977
+      ]
+    },
+    "burnin100_signed": {
+      "n": 20,
+      "mean": 0.13730669617652894,
+      "t": 2.152103151718951,
+      "df": 19,
+      "two_sided_p": 0.044457350864848824,
+      "t_95_ci": [
+        0.003769315452348543,
+        0.27084407690070933
+      ]
+    }
+  }
+}

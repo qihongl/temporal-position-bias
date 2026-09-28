@@ -1,0 +1,72 @@
+{
+  "rho": 0.95,
+  "sigma": 0.05,
+  "dimensions": 64,
+  "batch_size": 64,
+  "lr": 0.0005,
+  "epochs": 4000,
+  "train_lengths": [
+    60,
+    180
+  ],
+  "eval_length": 100,
+  "eval_indices": [
+    20,
+    40,
+    59,
+    79
+  ],
+  "legacy_indices": [
+    20,
+    40,
+    60,
+    80
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "n_test": 2000,
+  "workers": 4,
+  "torch_version": "2.12.0",
+  "numpy_version": "2.3.5",
+  "device": "cpu",
+  "threads_per_worker": 1,
+  "source_sha256": {
+    "src/make_figures_fq.py": "33ad252003249cfbc6735d4e35f21ad5675f42a6b104b4a73e019eec55f5daa3",
+    "src/sweep_endpoints.py": "3760af25e8b8b705780116ec5b33ebe06a88cff412e1b7a11d065b1598eb3691",
+    "src/config.py": "b4dfc3d08d7b9ed9462f606420847d0ed558341acaef31f7205f668897bfce62",
+    "src/analysis.py": "bf7de815fa255e5a4900393dc617317d2c0798f1d3f4fe8a2b8c3fa51580fcbe",
+    "src/human_data.py": "8e9a327a0799c9b3f54b11c2893f83760eaa16f36ca144820f0c56f5b589a0db",
+    "src/plotting.py": "7233f237a0ff378f280634092f3df362626b04aff1452a970d7e5df5e9a09b60",
+    "src/make_figures.py": "94cb7f198442d7b052025ae99534261089695011f07239542d6fa5266aa9083a",
+    "src/replicate.py": "68b650eb31f4ebb9f364fb6e4119b91f723dc34a1a0964936f482c7c650b3ca2",
+    "src/__init__.py": "7cf6a1fa1e9fa96c3e970884e5248eb2ad52284b28ff9e3844c7b8b75723d97d",
+    "src/train_fq.py": "197c8171e17eb8bb5436474a8ed4ed9923526129ba11c37ca622a72d1fdec850",
+    "src/model.py": "4351b17da56effad465fbf632113459d4e39cfe2dd8ccf70f6ccc51e9f7a9164",
+    "src/utils.py": "e22e2621ee7e2aa263da7c69038f0c9bf6a54c8cd3ef9755c04e08ee7257f667",
+    "src/make_model_schematic.py": "d5239eb62f8b91e1add25c95ecd5914d1d6704116f4b7d4e4ea1f911dcdd7309",
+    "src/train.py": "fea7e6e0d530c8455f5b8c283de87850ad671d8ab7d762443973ca35bc5f6804",
+    "src/plot_similarity_asymmetry.py": "2bddd7798a037f7b4831f8908b8ced849b8a6bf81d086d8aefa186d3aae2e8f1",
+    "src/train_endpoints.py": "2b1ad3dfb49a24c20917f5c32c6e4fedc328259b23b7c2a1934e0e6b6db3e245",
+    "src/train_all.py": "a3705948e7db047e374b0975d47c8131f83429f23d5f8a2e7c5aa754798368bb"
+  }
+}

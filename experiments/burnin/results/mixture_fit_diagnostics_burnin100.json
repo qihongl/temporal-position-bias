@@ -1,0 +1,3202 @@
+[
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -504.05924663014616
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1089.8723856010847
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1198.91856497907
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -749.6369730304652
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -504.05924663014616
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1089.8723856010847
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1222.6290022382495
+  },
+  {
+    "condition": "zero",
+    "seed": 42,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -750.8551941337805
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -477.8797524877952
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1104.9994944062444
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1215.5557035799607
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -722.7462247253204
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -477.8797524877952
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1104.9994944062444
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1176.308744704785
+  },
+  {
+    "condition": "zero",
+    "seed": 43,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -790.2214356298646
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -489.147429464869
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1068.6337962248508
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1205.2890549981234
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -822.1106692282555
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -489.147429464869
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1068.6337962248508
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1160.2345517819772
+  },
+  {
+    "condition": "zero",
+    "seed": 44,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -766.0378212816174
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -556.1271779027368
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1134.8721961923534
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1132.4112609579079
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -805.2878952707443
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -556.1271779027368
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1134.8721961923534
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1225.0532877913602
+  },
+  {
+    "condition": "zero",
+    "seed": 45,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -714.2534790471461
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -536.6668399531537
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1082.9553319633883
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1304.0883012746885
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -768.6914912366906
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -536.6668399531537
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1082.9553319633883
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1286.3784705842247
+  },
+  {
+    "condition": "zero",
+    "seed": 46,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -752.2540236297339
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -527.5695136907997
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1171.669876157755
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1251.3324051449258
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -809.9662644150785
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -527.5695136907997
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1171.669876157755
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1218.2134180572943
+  },
+  {
+    "condition": "zero",
+    "seed": 47,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -700.7715339627501
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -452.9310109271802
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1118.7173892488022
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1240.2495688204492
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -770.1654639917889
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -452.9310109271802
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1118.7173892488022
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1174.2981390194873
+  },
+  {
+    "condition": "zero",
+    "seed": 48,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -725.8385298284408
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -581.8091818989014
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1187.6665934664256
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1200.853841518242
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -799.6487422966959
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -581.8091818989014
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1187.6665934664256
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1197.3274656055673
+  },
+  {
+    "condition": "zero",
+    "seed": 49,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -830.1669365491024
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -519.4789479995158
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1078.4766609918938
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1231.6484379320561
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -717.0138654067863
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -519.4789479995158
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1078.4766609918938
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1253.7827252096417
+  },
+  {
+    "condition": "zero",
+    "seed": 50,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -726.4003112003378
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -447.77082723941186
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1035.7409064165104
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1146.9083632898858
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -792.0169654556671
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -447.77082723941186
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1035.7409064165104
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1135.3392016429582
+  },
+  {
+    "condition": "zero",
+    "seed": 51,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -752.4290795539479
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -586.9294428439111
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1189.912969166971
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1265.816319958546
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -831.8058985018847
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -586.9294428439111
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1189.912969166971
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1229.515132879828
+  },
+  {
+    "condition": "zero",
+    "seed": 52,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -766.0630807540185
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -469.06118403340344
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1128.1832480412256
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1225.0053233839826
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -762.1805782952115
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -469.06118403340344
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1128.1832480412256
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1222.1773256602619
+  },
+  {
+    "condition": "zero",
+    "seed": 53,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -735.4936944051119
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -516.7506013216978
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1113.0186197208404
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1194.6488831643635
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -780.4224506077467
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -516.7506013216978
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1113.0186197208404
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1165.6758319278592
+  },
+  {
+    "condition": "zero",
+    "seed": 54,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -692.0452086708001
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -598.3006505353983
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1108.1104365009232
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1219.1460739534868
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -828.4345361947351
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -598.3006505353983
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1108.1104365009232
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1230.1724863496352
+  },
+  {
+    "condition": "zero",
+    "seed": 55,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -755.1551398150015
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -486.9934690073737
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1175.9448730153674
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1302.9686756481517
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -802.8995653637053
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -486.9934690073737
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1175.9448730153674
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1152.1161864444225
+  },
+  {
+    "condition": "zero",
+    "seed": 56,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -798.4759533333932
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -467.8917675163542
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1013.2571060313987
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1171.2940235341675
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -726.5131293491224
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -467.8917675163542
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1013.2571060313987
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1126.49593470555
+  },
+  {
+    "condition": "zero",
+    "seed": 57,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -692.5931159746824
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -530.2568128518141
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1186.0248310673924
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1208.8700277088892
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -791.0550553462687
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -530.2568128518141
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1186.0248310673924
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1199.3240832670172
+  },
+  {
+    "condition": "zero",
+    "seed": 58,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -774.8326711672596
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -552.3893846519668
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1075.9557949462019
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1148.6562154963344
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -774.6145750305196
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -552.3893846519668
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1075.9557949462019
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1111.8423931771565
+  },
+  {
+    "condition": "zero",
+    "seed": 59,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -782.6994888394277
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -581.3096132930216
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1099.4007158169966
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1205.109657299537
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -732.7307052623954
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -581.3096132930216
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1099.4007158169966
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1172.825442217897
+  },
+  {
+    "condition": "zero",
+    "seed": 60,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -748.0974685920719
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -601.1591101360814
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1110.2805296568263
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1198.8047373932907
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -801.54139561641
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -601.1591101360814
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1110.2805296568263
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1238.1291726404475
+  },
+  {
+    "condition": "zero",
+    "seed": 61,
+    "eval_burnin": 0,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -715.862803709166
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -528.9850579682255
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -946.6224910329187
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1001.1700291237618
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -512.4063567374913
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -528.9850579682255
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -946.6224910329187
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1002.5011491797993
+  },
+  {
+    "condition": "burnin100",
+    "seed": 42,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -532.9793477129977
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -533.2129829855066
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1018.4633277245626
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -979.4342627362514
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -473.2983610330103
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -533.2129829855066
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1018.4633277245626
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -968.8879205935531
+  },
+  {
+    "condition": "burnin100",
+    "seed": 43,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -512.4945594124573
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -439.96001556128397
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -907.1209373284779
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -923.5512039499174
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -470.04829128969175
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -439.96001556128397
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -907.1209373284779
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -879.1108815359144
+  },
+  {
+    "condition": "burnin100",
+    "seed": 44,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -514.5204633197519
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -484.57598510226603
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -922.1941142948357
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -906.0160975532324
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -470.969445049158
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -484.57598510226603
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -922.1941142948357
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -946.9150455022044
+  },
+  {
+    "condition": "burnin100",
+    "seed": 45,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -423.17442607885505
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -575.3715794676318
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -901.3999122246968
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1101.2492176205037
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -537.880487244025
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -575.3715794676318
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -901.3999122246968
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1047.9557456035727
+  },
+  {
+    "condition": "burnin100",
+    "seed": 46,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -505.54470257455466
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -553.6198817094981
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1085.7928847096512
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1014.2767422682942
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -551.3871661613023
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -553.6198817094981
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1085.7928847096512
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -954.5402113514622
+  },
+  {
+    "condition": "burnin100",
+    "seed": 47,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -476.1684702085837
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -493.86934436244644
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -964.9498901321847
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -953.8496351276217
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -452.92751997911466
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -493.86934436244644
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -964.9498901321847
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -900.6837132640454
+  },
+  {
+    "condition": "burnin100",
+    "seed": 48,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -467.520839354944
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -608.8539141709326
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1011.5057626777823
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -980.073662149931
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -511.44251132499505
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -608.8539141709326
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1011.5057626777823
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -986.4718178487169
+  },
+  {
+    "condition": "burnin100",
+    "seed": 49,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -589.3399031111002
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -434.76468284762393
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -912.220270270338
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -970.6303162234249
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -442.6363735373827
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -434.76468284762393
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -912.220270270338
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -936.0237183450228
+  },
+  {
+    "condition": "burnin100",
+    "seed": 50,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -415.8589353572278
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -518.5101291067168
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -859.1675403924446
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -983.8188583505162
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -540.530220090435
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -518.5101291067168
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -859.1675403924446
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -908.5541899959599
+  },
+  {
+    "condition": "burnin100",
+    "seed": 51,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -507.561845678135
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -546.5196171800019
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1032.8722823592811
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -992.3299115112442
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -485.9957945528891
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -546.5196171800019
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1032.8722823592811
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -930.2901482305844
+  },
+  {
+    "condition": "burnin100",
+    "seed": 52,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -489.11345941458984
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -462.6849936063915
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -939.075982033587
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -923.7540149809265
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -560.2723386092171
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -462.6849936063915
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -939.075982033587
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -902.9273781424774
+  },
+  {
+    "condition": "burnin100",
+    "seed": 53,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -523.1464866131828
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -550.9366708146035
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -993.940063195011
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -964.007021812025
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -526.3766042047516
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -550.9366708146035
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -993.940063195011
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1001.9347372818924
+  },
+  {
+    "condition": "burnin100",
+    "seed": 54,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -484.074293232523
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -534.6823769242161
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -990.9783384100224
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -921.3829711823663
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -527.1812756269204
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -534.6823769242161
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -990.9783384100224
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -965.3119813482282
+  },
+  {
+    "condition": "burnin100",
+    "seed": 55,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -451.9674833994394
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -578.1741323443232
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -983.3291119305145
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -1039.713397384744
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -516.4885911063338
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -578.1741323443232
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -983.3291119305145
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -941.7427577230196
+  },
+  {
+    "condition": "burnin100",
+    "seed": 56,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -533.020755849506
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -454.16738756589496
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -896.2342631977824
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -918.6978874199576
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -459.55514979676036
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -454.16738756589496
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -896.2342631977824
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -897.4286825400745
+  },
+  {
+    "condition": "burnin100",
+    "seed": 57,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -415.8121736691336
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -470.7446980200272
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -953.7171861582101
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -951.051121762894
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -551.3717671036459
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -470.7446980200272
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -953.7171861582101
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -911.8752906262325
+  },
+  {
+    "condition": "burnin100",
+    "seed": 58,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -507.4399103543726
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -490.3896364842546
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -881.0246372959573
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -893.3827606147356
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -496.2916257154187
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -490.3896364842546
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -881.0246372959573
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -834.4676415656481
+  },
+  {
+    "condition": "burnin100",
+    "seed": 59,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -481.7499397692518
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -545.4245258716729
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -977.0237609765586
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -919.8349389406249
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -489.35712792443223
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -545.4245258716729
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -977.0237609765586
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -938.811147944025
+  },
+  {
+    "condition": "burnin100",
+    "seed": 60,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -442.91910643358983
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -563.8581815897771
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -930.8001062495337
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -946.2625289654716
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -543.5662804304106
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "legacy_p20",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -563.8581815897771
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "legacy_p40",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -930.8001062495337
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "legacy_p60",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -943.5778344360605
+  },
+  {
+    "condition": "burnin100",
+    "seed": 61,
+    "eval_burnin": 100,
+    "position": "legacy_p80",
+    "initial_success": true,
+    "initial_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "attempts": 1,
+    "initial_objective": -428.32053208650916
+  }
+]

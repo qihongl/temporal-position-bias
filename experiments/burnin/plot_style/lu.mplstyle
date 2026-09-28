@@ -1,0 +1,17 @@
+# Layout/export defaults. Apply Seaborn talk context before this theme.
+# scripts/plot_style.py combines them automatically without global leakage.
+figure.figsize: 3.5, 3.5
+figure.autolayout: False
+figure.constrained_layout.use: False
+figure.facecolor: white
+axes.facecolor: white
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: False
+savefig.facecolor: white
+savefig.transparent: False
+savefig.format: png
+savefig.dpi: 300
+savefig.bbox: standard
+# Typography and mark sizes come from sns.plotting_context("talk").
+# Choose categorical/continuous colors semantically; no exact palette is fixed.

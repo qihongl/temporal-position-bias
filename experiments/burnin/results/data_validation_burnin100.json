@@ -1,0 +1,7 @@
+{
+  "trained_models": 20,
+  "burnin": 100,
+  "paired_to_zero": true,
+  "finite_errors": true,
+  "source_unchanged": true
+}

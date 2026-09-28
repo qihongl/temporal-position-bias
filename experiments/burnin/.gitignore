@@ -1,0 +1,17 @@
+# Keep the completed control reviewable, including its figures and saved results.
+!*.py
+!requirements-control.txt
+!README.md
+!MIGRATION_MANIFEST.json
+!results/
+!results/**
+!figures_burnin/
+!figures_burnin/**
+!plot_style/
+!plot_style/**
+.cache/
+__pycache__/
+*.py[cod]
+
+# Longer burn-in experiments and superseded comparisons stay local.
+/archive/

@@ -1,0 +1,12 @@
+{
+  "seed": 54,
+  "condition": "burnin100",
+  "burnin": 100,
+  "epochs": 4000,
+  "train_seconds": 114.44609500002116,
+  "training_input_checksum": "0649513e90d64d75143720128115d7827280dfbd18b67149ab7a58ebcf713dd6",
+  "final_train_mse": 0.03255601227283478,
+  "last100_train_mse": 0.03651823805645108,
+  "temperature": 0.37740811705589294,
+  "test_per_position": 2000
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "length": 60,
+    "float64_max_error": 3.122502256758253e-17,
+    "float32_max_error": 1.1175870895385742e-08
+  },
+  {
+    "length": 180,
+    "float64_max_error": 4.163336342344337e-17,
+    "float32_max_error": 2.2351741790771484e-08
+  },
+  {
+    "length": 300,
+    "float64_max_error": 4.163336342344337e-17,
+    "float32_max_error": 1.6763806343078613e-08
+  },
+  {
+    "length": 580,
+    "float64_max_error": 5.551115123125783e-17,
+    "float32_max_error": 1.862645149230957e-08
+  }
+]
